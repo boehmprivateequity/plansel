@@ -2,6 +2,8 @@
    in der Live-Version kommen Archiv-Antworten und Guide-Einträge aus einem CMS/LLM-Backend. */
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
+  // Übersetzung aus i18n.js; Deutsch ist der Originaltext
+  const tr = s => (window.PLANSEL_I18N ? window.PLANSEL_I18N.tr(s) : s);
 
   /* ---------- Böhm-Archiv (KI-Prototyp) ---------- */
   const QA = [
@@ -27,28 +29,32 @@
     }
   ];
   const qs = $("#qs"), ans = $("#answer");
-  function showAnswer(i) {
+  let current = 0;
+  function showAnswer(i, instant) {
+    current = i;
     qs.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-pressed", String(i === j)));
     const item = QA[i];
-    ans.textContent = "";
+    const text = tr(item.a);
     let k = 0;
-    const text = item.a;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const done = () => { ans.textContent = text; const s = document.createElement("small"); s.textContent = "Quelle: " + item.src; ans.appendChild(s); };
-    if (reduce) return done();
+    const done = () => { ans.textContent = text; const s = document.createElement("small"); s.textContent = tr("Quelle: ") + tr(item.src); ans.appendChild(s); };
     clearInterval(showAnswer.t);
+    if (reduce || instant) return done();
+    ans.textContent = "";
     showAnswer.t = setInterval(() => { k += 4; ans.textContent = text.slice(0, k); if (k >= text.length) { clearInterval(showAnswer.t); done(); } }, 16);
   }
-  QA.forEach((item, i) => {
-    const b = document.createElement("button");
-    b.type = "button"; b.textContent = item.q; b.setAttribute("aria-pressed", "false");
-    b.addEventListener("click", () => showAnswer(i));
-    qs.appendChild(b);
-  });
+  function renderQuestions() {
+    qs.innerHTML = "";
+    QA.forEach((item, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.textContent = tr(item.q); b.setAttribute("aria-pressed", String(i === current));
+      b.addEventListener("click", () => showAnswer(i));
+      qs.appendChild(b);
+    });
+  }
   // Ruhezustand: erste Antwort sofort sichtbar
-  qs.querySelector("button").setAttribute("aria-pressed", "true");
-  ans.textContent = QA[0].a;
-  const s0 = document.createElement("small"); s0.textContent = "Quelle: " + QA[0].src; ans.appendChild(s0);
+  renderQuestions();
+  showAnswer(0, true);
 
   /* ---------- KI-Sommelier ---------- */
   const WINES = {
@@ -57,8 +63,8 @@
     rose: { name: "Plansel Rosé", img: "img/garrafa-rose.png", type: "Rosé" }
   };
   function recommend(o, f, s) {
-    if (f === "meat" || (s === "full" && f !== "fish")) return ["tinto", "Tinta Barroca bringt dunkle Frucht und weiche Tannine. Das trägt Fleisch und kräftige Saucen.", "Kräftig + " + (f === "meat" ? "Fleisch" : "Anlass") + " → Rotwein mit Struktur"];
-    if (f === "fish" || (o === "summer" && s === "fresh" && f === "veg")) return [o === "summer" ? "rose" : "branco", o === "summer" ? "Der Rosé ist trocken und frisch, ideal gekühlt auf der Terrasse und zu Meeresfrüchten." : "Der Branco hat lebendige Säure und Frucht aus dem Alentejo. Er passt zu Fisch und hellen Gerichten.", "Frisch + " + (f === "fish" ? "Fisch" : "Sommer") + " → heller, säurebetonter Stil"];
+    if (f === "meat" || (s === "full" && f !== "fish")) return ["tinto", "Tinta Barroca bringt dunkle Frucht und weiche Tannine. Das trägt Fleisch und kräftige Saucen.", f === "meat" ? "Kräftig + Fleisch → Rotwein mit Struktur" : "Kräftig + Anlass → Rotwein mit Struktur"];
+    if (f === "fish" || (o === "summer" && s === "fresh" && f === "veg")) return [o === "summer" ? "rose" : "branco", o === "summer" ? "Der Rosé ist trocken und frisch, ideal gekühlt auf der Terrasse und zu Meeresfrüchten." : "Der Branco hat lebendige Säure und Frucht aus dem Alentejo. Er passt zu Fisch und hellen Gerichten.", f === "fish" ? "Frisch + Fisch → heller, säurebetonter Stil" : "Frisch + Sommer → heller, säurebetonter Stil"];
     if (o === "gift") return ["tinto", "Als Geschenk empfehlen wir den Roten: eine Flasche mit Geschichte, aus Reben, die Hans Jörg Böhm selbst selektiert hat.", "Geschenk → Wein mit Herkunftsgeschichte"];
     if (o === "summer") return ["rose", "Gekühlt und unkompliziert. Passt zu Gemüse vom Grill und langen Abenden.", "Sommerabend → Rosé"];
     return ["branco", "Frisch und vielseitig. Ein guter Begleiter für Gemüse und leichte Küche.", "Frisch + leichte Küche → Weißwein"];
@@ -69,13 +75,13 @@
     const [key, why, rule] = recommend(d.get("occ"), d.get("food"), d.get("style"));
     const w = WINES[key];
     out.innerHTML = "";
-    const img = document.createElement("img"); img.src = w.img; img.alt = "Flasche " + w.name;
+    const img = document.createElement("img"); img.src = w.img; img.alt = tr("Flasche " + w.name);
     const box = document.createElement("div");
-    box.innerHTML = '<span class="badge-ai">KI-Empfehlung</span>';
+    const badge = document.createElement("span"); badge.className = "badge-ai"; badge.textContent = tr("KI-Empfehlung"); box.appendChild(badge);
     const h = document.createElement("h3"); h.textContent = w.name;
-    const p = document.createElement("p"); p.textContent = why;
-    const r = document.createElement("p"); r.className = "why"; r.textContent = "Begründung: " + rule;
-    const a = document.createElement("a"); a.className = "btn"; a.style.marginTop = "18px"; a.href = "https://loja.plansel.com/collections"; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Im Shop bestellen";
+    const p = document.createElement("p"); p.textContent = tr(why);
+    const r = document.createElement("p"); r.className = "why"; r.textContent = tr("Begründung: ") + tr(rule);
+    const a = document.createElement("a"); a.className = "btn"; a.style.marginTop = "18px"; a.href = "https://loja.plansel.com/collections"; a.target = "_blank"; a.rel = "noopener"; a.textContent = tr("Im Shop bestellen");
     box.append(h, p, r, a);
     out.append(img, box);
   }
@@ -117,35 +123,51 @@
     ]
   };
   const tabs = $("#tabs"), grid = $("#guide-grid");
+  let activeCat = Object.keys(GUIDE)[0];
   function renderGuide(cat) {
+    activeCat = cat;
     tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.cat === cat)));
     grid.innerHTML = "";
     GUIDE[cat].forEach(e => {
-      if (e.ad) { const d = document.createElement("div"); d.className = "ad"; d.textContent = e.ad; grid.appendChild(d); return; }
+      if (e.ad) { const d = document.createElement("div"); d.className = "ad"; d.textContent = tr(e.ad); grid.appendChild(d); return; }
       const a = document.createElement("article"); a.className = "entry";
       a.innerHTML = '<span class="when"></span><h3></h3><p></p><span class="tag"></span>';
-      a.querySelector(".when").textContent = e.when;
-      a.querySelector("h3").textContent = e.t;
-      a.querySelector("p").textContent = e.d;
-      const tg = a.querySelector(".tag"); tg.textContent = e.tag; if (e.must) tg.classList.add("tag--must");
+      a.querySelector(".when").textContent = tr(e.when);
+      a.querySelector("h3").textContent = tr(e.t);
+      a.querySelector("p").textContent = tr(e.d);
+      const tg = a.querySelector(".tag"); tg.textContent = tr(e.tag); if (e.must) tg.classList.add("tag--must");
       grid.appendChild(a);
     });
   }
-  Object.keys(GUIDE).forEach((cat, i) => {
-    const b = document.createElement("button");
-    b.type = "button"; b.role = "tab"; b.dataset.cat = cat; b.textContent = cat;
-    b.addEventListener("click", () => renderGuide(cat));
-    tabs.appendChild(b);
-    if (i === 0) renderGuide(cat);
-  });
-  renderGuide(Object.keys(GUIDE)[0]);
+  function renderTabs() {
+    tabs.innerHTML = "";
+    Object.keys(GUIDE).forEach(cat => {
+      const b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "tab"); b.dataset.cat = cat; b.textContent = tr(cat);
+      b.addEventListener("click", () => renderGuide(cat));
+      tabs.appendChild(b);
+    });
+    renderGuide(activeCat);
+  }
+  renderTabs();
 
   /* ---------- Newsletter ---------- */
+  let nlState = "";
+  const NL = { bad: "Bitte eine gültige E-Mail-Adresse eingeben.", ok: "Entwurf: Hier würde jetzt die Bestätigungsmail (Double-Opt-in) verschickt." };
   $("#signup").addEventListener("submit", e => {
     e.preventDefault();
     const email = $("#nl-email"), msg = $("#nl-msg");
-    if (!email.value || !email.checkValidity()) { msg.style.color = "var(--gold)"; msg.textContent = "Bitte eine gültige E-Mail-Adresse eingeben."; email.focus(); return; }
-    msg.style.color = ""; msg.textContent = "Entwurf: Hier würde jetzt die Bestätigungsmail (Double-Opt-in) verschickt.";
+    if (!email.value || !email.checkValidity()) { nlState = "bad"; msg.style.color = "var(--gold)"; msg.textContent = tr(NL.bad); email.focus(); return; }
+    nlState = "ok"; msg.style.color = ""; msg.textContent = tr(NL.ok);
+  });
+
+  /* ---------- Sprachwechsel: dynamische Teile neu zeichnen ---------- */
+  document.addEventListener("plansel:lang", () => {
+    renderQuestions();
+    showAnswer(current, true);
+    renderSomm();
+    renderTabs();
+    if (nlState) $("#nl-msg").textContent = tr(NL[nlState]);
   });
 
 })();

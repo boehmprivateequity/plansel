@@ -1,6 +1,6 @@
 /* Sprachumschalter: EN · DE · PT · FR · ES · 中文 · PL
-   Entwurf: Navigation, Hero, Überschriften und Buttons sind übersetzt.
-   Fließtexte folgen im CMS (KI-Übersetzung + Prüfung durch Muttersprachler). */
+   Überschriften mit Schlüsseln (data-i18n) stehen hier, alle übrigen Texte in i18n-texts.js.
+   Dynamische Teile (Sommelier, Archiv, Guide) übersetzt app.js über PLANSEL_I18N.tr(). */
 window.PLANSEL_I18N = (function () {
   const LANGS = [
     ["en", "EN", "English"], ["de", "DE", "Deutsch"], ["pt", "PT", "Português"], ["fr", "FR", "Français"],
@@ -122,12 +122,49 @@ window.PLANSEL_I18N = (function () {
   document.querySelectorAll("[data-i18n]").forEach(el => { DE[el.dataset.i18n] = el.textContent; });
   document.querySelectorAll("[data-i18n-html]").forEach(el => { DE[el.dataset.i18nHtml] = el.innerHTML; });
 
+  // Alle übrigen Texte: Wörterbuch mit dem deutschen Text als Schlüssel (i18n-texts.js)
+  const COLS = ["de", "en", "pt", "fr", "es", "zh", "pl"];
+  const norm = s => s.replace(/\s+/g, " ").trim();
+  const TX = {};
+  COLS.forEach(c => { TX[c] = {}; });
+  (window.PLANSEL_TEXTS || []).forEach(row => { COLS.forEach((c, i) => { if (row[i]) TX[c][norm(row[0])] = row[i]; }); });
+  let lang = "de";
+  // Übersetzt einen deutschen Text in die aktive Sprache (auch für app.js)
+  const tr = s => (lang === "de" ? s : (TX[lang][norm(s)] ?? s));
+
+  const SKIP = "script,style,#lang,select,[data-i18n],[data-i18n-html],[data-dyn]";
+  const origText = new WeakMap();
+  const ATTRS = ["alt", "placeholder", "aria-label", "title"];
+  function translateDom() {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: n => (!n.parentElement || n.parentElement.closest(SKIP) || !n.textContent.trim()) ? 2 : 1
+    });
+    let n;
+    while ((n = walker.nextNode())) {
+      if (!origText.has(n)) origText.set(n, n.textContent);
+      const src = origText.get(n), lead = src.match(/^\s*/)[0], trail = src.match(/\s*$/)[0];
+      n.textContent = lang === "de" ? src : lead + tr(src) + trail;
+    }
+    document.querySelectorAll(ATTRS.map(a => "[" + a + "]").join(",")).forEach(el => {
+      if (el.closest("#lang,[data-dyn]")) return;
+      ATTRS.forEach(a => {
+        if (!el.hasAttribute(a)) return;
+        const key = "orig" + a.replace(/-./g, m => m[1].toUpperCase()).replace(/^./, m => m.toUpperCase());
+        if (!(key in el.dataset)) el.dataset[key] = el.getAttribute(a);
+        el.setAttribute(a, tr(el.dataset[key]));
+      });
+    });
+  }
+
   const box = document.getElementById("lang");
   function apply(code) {
+    lang = code;
     const dict = code === "de" ? DE : Object.assign({}, DE, T[code]);
     document.querySelectorAll("[data-i18n]").forEach(el => { const v = dict[el.dataset.i18n]; if (v) el.textContent = v; });
     document.querySelectorAll("[data-i18n-html]").forEach(el => { const v = dict[el.dataset.i18nHtml]; if (v) el.innerHTML = v; });
-    document.documentElement.lang = code;
+    translateDom();
+    document.documentElement.lang = code === "zh" ? "zh-Hans" : code;
+    document.dispatchEvent(new CustomEvent("plansel:lang", { detail: code }));
     box.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === code)));
     const sel = document.getElementById("nl-lang"); if (sel) sel.value = code;
     try { localStorage.setItem("plansel-lang", code); } catch (e) {}
@@ -143,5 +180,5 @@ window.PLANSEL_I18N = (function () {
   try { start = localStorage.getItem("plansel-lang") || start; } catch (e) {}
   if (!T[start] && start !== "de") start = "de";
   apply(start);
-  return { apply };
+  return { apply, tr, get lang() { return lang; } };
 })();
