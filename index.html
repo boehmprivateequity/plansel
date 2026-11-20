@@ -20,7 +20,7 @@
 <link rel="icon" href="img/logo-figura.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
 <link rel="stylesheet" href="styles.css">
 
 <script type="application/ld+json">
@@ -97,16 +97,19 @@
 
   <!-- HERO: Verkauf zuerst -->
   <section class="hero" aria-labelledby="hero-title">
-    <img src="img/hero-quinta-aerial.jpg" alt="Luftaufnahme der Quinta da Plansel bei Montemor-o-Novo" fetchpriority="high">
-    <div class="wrap">
+    <div class="hero-text">
       <p class="eyebrow" data-i18n="hero.eyebrow">Alentejo · Portugal · seit 1975</p>
       <h1 id="hero-title" data-i18n-html="hero.title">Weine aus den Reben, auf denen <em>Portugal wächst.</em></h1>
-      <p data-i18n="hero.text">Jedes zweite Weingut in Portugal pflanzt Reben aus Plansel-Selektion. Die besten davon keltern wir selbst: gehobene Weine aus dem Alentejo, belegt durch 50 Jahre Forschung.</p>
+      <p class="hero-lede" data-i18n="hero.text">Jedes zweite Weingut in Portugal pflanzt Reben aus Plansel-Selektion. Die besten davon keltern wir selbst: gehobene Weine aus dem Alentejo, belegt durch 50 Jahre Forschung.</p>
       <div class="actions">
-        <a class="btn btn--sage" href="#weine" data-i18n="hero.buy">Weine entdecken</a>
-        <a class="btn btn--ghost" href="#erlebnisse" data-i18n="hero.book">Weingut besuchen</a>
+        <a class="btn" href="#weine" data-i18n="hero.buy">Weine entdecken</a>
+        <a class="link" href="#erlebnisse" data-i18n="hero.book">Weingut besuchen</a>
       </div>
     </div>
+    <figure class="hero-img">
+      <img src="img/hero-quinta-aerial.jpg" alt="Luftaufnahme der Quinta da Plansel bei Montemor-o-Novo" fetchpriority="high" width="1800" height="1198">
+      <figcaption>Quinta da Plansel, Montemor-o-Novo. Rebschule, Weinberge und Keller auf einem Gut.</figcaption>
+    </figure>
   </section>
 
   <!-- FAKTEN -->
@@ -209,7 +212,7 @@
         <p class="lede" data-i18n="exp.lede">Verkostungen im Keller, Wine &amp; Dine zwischen den Reben, Übernachten auf der Quinta und die Plansel Gin Experience.</p>
       </div>
       <div class="band">
-        <figure><img src="img/wine-dine.jpg" alt="Gedeckte Tafel beim Wine &amp; Dine auf der Quinta da Plansel" loading="lazy"><figcaption><b>Wine &amp; Dine</b><span>Menü mit Weinbegleitung</span></figcaption></figure>
+        <figure class="tall"><img src="img/wine-dine.jpg" alt="Gedeckte Tafel beim Wine &amp; Dine auf der Quinta da Plansel" loading="lazy"><figcaption><b>Wine &amp; Dine</b><span>Menü mit Weinbegleitung</span></figcaption></figure>
         <figure><img src="img/quinta-casa.jpg" alt="Weißes Gutshaus der Quinta da Plansel zwischen Reben" loading="lazy"><figcaption><b>Alojamento</b><span>Auf der Quinta</span></figcaption></figure>
         <figure><img src="img/vindima.jpg" alt="Hände mit frisch gelesenen Trauben über einem Fass" loading="lazy"><figcaption><b>Vindima</b><span>Setembro</span></figcaption></figure>
       </div>
@@ -245,6 +248,11 @@
         <h2 id="sci-title" data-i18n="sci.title">Die Wissenschaft hinter jeder Flasche.</h2>
         <p class="lede" data-i18n="sci.lede">Plansel heißt „Plantas Seleccionadas“. Hinter dem Namen steht ein Forschungsprogramm, das mit Universitäten arbeitet und die Rebsorten Portugals für das Klima von morgen vorbereitet.</p>
       </div>
+
+      <figure class="plate">
+        <img src="img/bacelos-enxertados.jpg" alt="Frisch gepfropfte Rebstecklinge mit rotem Veredelungswachs in einem Feld der Rebschule" loading="lazy" width="1600" height="1066">
+        <figcaption><b>Abb. 1</b> Gepfropfte Reben in der Rebschule Viveiros Plansel. Das rote Wachs schützt die Veredelungsstelle, bis die Rebe angewachsen ist.</figcaption>
+      </figure>
 
       <div class="founder">
         <figure class="portrait">
@@ -318,11 +326,11 @@
         </div>
       </div>
 
-      <div class="topics">
-        <article><span class="num">Forschung 1</span><h3>Klonselektion</h3><p>Aus alten Weinbergen werden die gesündesten, ausdrucksstärksten Stöcke ausgewählt und vermehrt.</p></article>
-        <article><span class="num">Forschung 2</span><h3>Resistente Sorten</h3><p>Reben, die mit weniger Pflanzenschutz auskommen. Böhm hält das für die wichtigste Aufgabe der Branche.</p></article>
-        <article><span class="num">Forschung 3</span><h3>Klimawandel</h3><p>Pflanzmaterial für heißere Sommer und weniger Wasser, getestet im Alentejo.</p></article>
-        <article><span class="num">Forschung 4</span><h3>Alte Sorten</h3><p>Fast vergessene portugiesische Rebsorten werden wiederentdeckt und im Wein erprobt.</p></article>
+      <div class="topics" aria-label="Forschungsschwerpunkte">
+        <article><span class="num">I</span><h3>Klonselektion</h3><p>Aus alten Weinbergen werden die gesündesten, ausdrucksstärksten Stöcke ausgewählt und vermehrt.</p></article>
+        <article><span class="num">II</span><h3>Resistente Sorten</h3><p>Reben, die mit weniger Pflanzenschutz auskommen. Böhm hält das für die wichtigste Aufgabe der Branche.</p></article>
+        <article><span class="num">III</span><h3>Klimawandel</h3><p>Pflanzmaterial für heißere Sommer und weniger Wasser, getestet im Alentejo.</p></article>
+        <article><span class="num">IV</span><h3>Alte Sorten</h3><p>Fast vergessene portugiesische Rebsorten werden wiederentdeckt und im Wein erprobt.</p></article>
       </div>
 
       <div class="ask" aria-labelledby="ask-title">
@@ -346,6 +354,7 @@
         <p class="lede" data-i18n="guide.lede">Messen, Verkostungen, Weingüter, Restaurants und Hotels. Kuratiert von unserem Team, sortiert mit KI, jeden Donnerstag aktualisiert.</p>
       </div>
 
+      <p class="masthead"><span>Ausgabe 47</span><span>Donnerstag, 19. November 2026</span></p>
       <div class="tabs" role="tablist" aria-label="Guide" id="tabs"></div>
       <div class="guide-grid" id="guide-grid" role="tabpanel"></div>
       <p class="note">Entwurf: Messetermine sind vorläufig. Mit „Beispiel“ markierte Einträge sind Platzhalter für echte Partner.</p>
@@ -356,7 +365,6 @@
 
   <!-- NEWSLETTER -->
   <section class="sec letter" id="letter" aria-labelledby="letter-title">
-    <img src="img/copos.jpg" alt="" loading="lazy">
     <div class="wrap">
       <div>
         <p class="eyebrow" data-i18n="letter.eyebrow">The Plansel Wine Letter · jeden Donnerstag</p>
