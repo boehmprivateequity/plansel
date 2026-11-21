@@ -743,3 +743,39 @@ form.signup input[type=email], form.signup select { border-bottom-color: var(--l
 .yt-list small, .press-list small { font-size: .8rem; color: var(--ink-2); }
 .hjb-booklist li.chronik img { box-shadow: 0 6px 18px rgba(80,10,20,.3); }
 @media (max-width: 860px) { .fam3-grid, .fam3-cols { grid-template-columns: 1fr; } }
+/* Bild vergrößern (Stammbaum) */
+img.zoomable { cursor: zoom-in; transition: box-shadow .2s; }
+img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gold); outline: none; }
+.zoom-hint { display: block; margin-top: 4px; font: 500 .78rem/1.3 var(--f-text); font-style: normal; letter-spacing: .04em; color: var(--gold-deep); }
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(250,248,243,.97); overflow: auto; display: grid; place-items: center; cursor: zoom-out; }
+.lightbox img { display: block; max-width: 100vw; max-height: 100vh; width: auto; height: auto; cursor: zoom-in; box-shadow: 0 8px 40px rgba(26,24,19,.18); }
+.lightbox.lb-zoom { display: block; }
+.lightbox.lb-zoom img { max-width: none; max-height: none; width: max(1800px, 200vw); cursor: zoom-out; }
+.lb-close { position: fixed; top: 14px; right: 14px; z-index: 201; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--ink); color: var(--paper); font-size: 1.6rem; line-height: 1; cursor: pointer; }
+/* Chronik der Familie Böhm (chronik/*.html) */
+.chronik-page main { background: var(--paper); }
+.ch-wrap { max-width: 880px; }
+.chronik-ch h1, .chronik-toc h1 { font-size: var(--step-3); line-height: 1.1; margin: 12px 0 26px; }
+.chronik-ch .eyebrow, .chronik-toc .eyebrow { color: var(--gold-deep); }
+.ch-text { display: grid; gap: 14px; font-size: 1.06rem; line-height: 1.75; color: var(--ink); }
+.ch-text p.ch-cap { font: italic 400 1rem/1.45 var(--f-display); color: var(--ink-2); padding-left: 12px; border-left: 2px solid var(--gold); }
+.ch-note { color: var(--ink-2); font-style: italic; }
+.ch-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: clamp(28px, 4vw, 44px); padding-top: 24px; border-top: 1px solid var(--line); }
+.ch-gallery figure { margin: 0; background: #fff; border: 1px solid var(--line); padding: 8px; display: grid; place-items: center; }
+.ch-gallery img { width: 100%; height: 200px; object-fit: contain; display: block; }
+.ch-gallery--scans { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.ch-gallery--scans img { height: 320px; }
+.ch-pager { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: clamp(32px, 5vw, 56px); padding-top: 20px; border-top: 1px solid var(--line); }
+.ch-intro { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(20px, 4vw, 44px); align-items: start; margin-bottom: clamp(28px, 4vw, 48px); }
+.ch-intro img { width: 100%; height: auto; box-shadow: 0 8px 24px rgba(80,10,20,.25); }
+.ch-part { font-size: var(--step-1); margin: 34px 0 10px; color: var(--gold-deep); }
+.ch-toc { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.ch-toc a { display: grid; grid-template-columns: 2.6em minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+.ch-toc a:hover { background: var(--paper-2); }
+.ch-toc .n { font: italic 1.1rem/1 var(--f-display); color: var(--gold-deep); }
+.ch-toc b { font: 400 1.12rem/1.3 var(--f-display); }
+.ch-toc small { font-size: .8rem; color: var(--ink-2); white-space: nowrap; }
+.chronik-foot { padding-block: 32px; }
+.chronik-foot p { margin: 0 0 8px; font-size: .85rem; }
+.chronik-foot a { color: inherit; }
+@media (max-width: 640px) { .ch-intro { grid-template-columns: 120px minmax(0, 1fr); } .ch-toc a { grid-template-columns: 2.2em minmax(0, 1fr); } .ch-toc small { display: none; } }

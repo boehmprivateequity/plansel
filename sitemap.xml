@@ -197,4 +197,16 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
   </url>
+  <url><loc>https://www.plansel.com/chronik/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/vorwort.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/umfeld.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/ahnenforschung.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/wachenheim.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/herder.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/friedrich.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/emilie.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/sektkellerei.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/georg.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/rueckblick.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/chronik/helene.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>

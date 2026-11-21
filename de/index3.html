@@ -72,11 +72,11 @@
         <h1 id="fam3-title">So beginnt die Familie Böhm.</h1>
         <p class="hjb-lede">Die Stammtafel der Familie Böhm führt zurück in die Pfalz. In ihrer Mitte liegt Wachenheim an der Weinstraße, gemalt mit der Jahreszahl 1579, umgeben von den Wappen der Familie und ihren Vorfahren.</p>
         <p class="hjb-lede">Die Tafel gehört zur „Chronik der Familie Friedrich und Emilie Böhm mit Abkommenschaft“, die Jorge Böhm 2013 für die Familie herausgegeben hat.</p>
-        <p class="fam3-jump"><a class="link" href="#hans-joerg">Comendador Hans Jörg Böhm</a> <a class="link" href="#dorina">Dorina Lindemann</a></p>
+        <p class="fam3-jump"><a class="link" href="../chronik/index.html">Chronik der Familie lesen</a> <a class="link" href="#hans-joerg">Comendador Hans Jörg Böhm</a> <a class="link" href="#dorina">Dorina Lindemann</a></p>
       </div>
       <figure class="fam3-tree">
-        <img src="../img/familie/stammbaum-familie-boehm.jpg" width="955" height="1290" alt="Gemalte Stammtafel der Familie Böhm mit Wappen, Eichenlaub und der Ansicht von Wachenheim, Ao. 1579">
-        <figcaption>Stammtafel der Familie Böhm · Wachenheim, Ao. 1579</figcaption>
+        <img class="zoomable" tabindex="0" role="button" title="Zum Vergrößern klicken" src="../img/familie/stammbaum-familie-boehm.webp" width="1086" height="1448" alt="Gemalte Stammtafel der Familie Böhm mit Wappen, Eichenlaub und der Ansicht von Wachenheim, Ao. 1579">
+        <figcaption>Stammtafel der Familie Böhm · Wachenheim, Ao. 1579 <span class="zoom-hint">⤢ Zum Vergrößern klicken</span></figcaption>
       </figure>
     </div>
   </section>
@@ -216,7 +216,7 @@
       <ul class="hjb-booklist">
         <li class="chronik">
           <img src="../img/livros/chronik-familie-boehm.jpg" alt="Weinroter Einband mit goldener Frakturschrift: Chronik der Familie Friedrich und Emilie Böhm mit Abkommenschaft" loading="lazy" width="500" height="677">
-          <div><span class="tag-new">Privatdruck · Juni 2013 · 40 Exemplare</span><b>Chronik der Familie Friedrich und Emilie Böhm mit Abkommenschaft</b><small>Die Familienchronik, herausgegeben von Jorge Böhm. „Mit Abkommenschaft“ heißt: mit allen Nachkommen. Sie ist nur für den Familienkreis bestimmt und nicht im Handel.</small></div>
+          <div><span class="tag-new">Privatdruck · Juni 2013 · 40 Exemplare</span><b>Chronik der Familie Friedrich und Emilie Böhm mit Abkommenschaft</b><small>Die Familienchronik, herausgegeben von Jorge Böhm. „Mit Abkommenschaft“ heißt: mit allen Nachkommen. Sie ist nur für den Familienkreis bestimmt und nicht im Handel.</small><a class="link" href="../chronik/index.html">Chronik online lesen</a></div>
         </li>
         <li>
           <img src="../img/livros/grande-livro-das-castas-capa.jpg" alt="Buchcover: Portugal Vitícola – O Grande Livro das Castas, Autor-Koordinator Jorge Böhm, Chaves Ferreira Publicações" loading="lazy" width="398" height="538">
@@ -289,6 +289,36 @@
   </div>
 </footer>
 
+<script id="lightbox">
+/* Bild anklicken: bildschirmfüllend anzeigen; nochmal klicken: stärker vergrößern zum Lesen; Esc oder × schließt */
+(function () {
+  function open(img) {
+    var box = document.createElement("div");
+    box.className = "lightbox";
+    box.innerHTML = '<button class="lb-close" type="button" aria-label="×">×</button><img alt="">';
+    var big = box.querySelector("img");
+    big.src = img.currentSrc || img.src; big.alt = img.alt;
+    function close() { box.remove(); document.documentElement.style.overflow = ""; document.removeEventListener("keydown", key); img.focus(); }
+    function key(e) { if (e.key === "Escape") close(); }
+    big.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var r = big.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+      box.classList.toggle("lb-zoom");
+      if (box.classList.contains("lb-zoom")) { box.scrollLeft = fx * big.offsetWidth - box.clientWidth / 2; box.scrollTop = fy * big.offsetHeight - box.clientHeight / 2; }
+    });
+    box.addEventListener("click", close);
+    box.querySelector(".lb-close").addEventListener("click", close);
+    document.addEventListener("keydown", key);
+    document.documentElement.style.overflow = "hidden";
+    document.body.appendChild(box);
+    box.querySelector(".lb-close").focus();
+  }
+  document.querySelectorAll("img.zoomable").forEach(function (img) {
+    img.addEventListener("click", function () { open(img); });
+    img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(img); } });
+  });
+})();
+</script>
 <script src="../i18n-texts.js"></script>
 <script src="../i18n.js"></script>
 
