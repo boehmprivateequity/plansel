@@ -604,3 +604,36 @@ form.signup legend.eyebrow::before { display: none; }
 .nav a { white-space: nowrap; }
 @media (max-width: 1240px) { .nav { gap: 16px; } .nav a { font-size: .85rem; } .nav a:nth-child(n+5) { display: none; } }
 .head-cta, .lang button { white-space: nowrap; }
+
+/* Mundus Vini: Qualitätssiegel unter den Events */
+.mv { background: var(--night); color: var(--on-night); padding-block: clamp(36px, 4.5vw, 56px); }
+.mv-grid { max-width: 1040px; display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: clamp(24px, 4vw, 52px); align-items: center; }
+.mv-pic { margin: 0; background: #fff; border-radius: 6px; padding: 14px 14px 8px; }
+.mv-pic img { display: block; width: 100%; height: auto; }
+.mv-pic figcaption { color: #555; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; text-align: center; padding-top: 6px; }
+.mv .eyebrow { color: var(--gold); }
+.mv h2 { font-size: var(--step-2); margin: 10px 0 12px; }
+.mv-lede { color: var(--on-night-2); max-width: 60ch; font-size: .95rem; }
+.mv-list { list-style: none; margin: 18px 0; padding: 0; border-top: 1px solid var(--rule-night); }
+.mv-list li { display: grid; grid-template-columns: 60px minmax(0, 1fr) auto; gap: 14px; padding: 6px 0; border-bottom: 1px solid var(--rule-night); align-items: center; }
+.mv-list img { width: 44px; height: 44px; display: block; }
+.mv-pair { display: flex; }
+.mv-pair img { width: 34px; height: 34px; }
+.mv-pair img + img { margin-left: -8px; }
+.mv-list .w { font: 400 1rem/1.3 var(--f-display); }
+.mv-list .w a { color: inherit; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.mv-list .t { font-size: .8rem; color: var(--on-night-2); }
+.mv-ceo { display: flex; align-items: center; gap: 14px; margin: 0 0 18px; }
+.mv-ceo img { width: 120px; height: 80px; object-fit: cover; border-radius: 6px; flex: none; background: #fff; border: 2px solid var(--gold); }
+.mv-ceo p { margin: 0; display: grid; }
+.mv-ceo b { font: 500 1.05rem/1.2 var(--f-display); }
+.mv-ceo small { color: var(--on-night-2); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+.mv-links { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+.mv .btn { background: var(--gold); border-color: var(--gold); color: var(--night); }
+.mv .btn:hover { background: var(--on-night); border-color: var(--on-night); }
+.mv .link { color: var(--on-night); }
+.mv .note { color: var(--on-night-2); margin-top: 14px; font-size: .85rem; }
+@media (max-width: 760px) {
+  .mv-grid { grid-template-columns: 1fr; }
+  .mv-pic { max-width: 420px; }
+}

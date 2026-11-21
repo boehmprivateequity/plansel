@@ -119,7 +119,7 @@
       { when: "Feb 2027 · Paris", t: "Wine Paris", d: "Internationale Fachmesse. Portugal mit großem Länderstand.", tag: "Messe", url: "https://www.wineparis.com/" },
       { when: "März 2027 · Düsseldorf", t: "ProWein", d: "Wichtigste Weinmesse für den deutschsprachigen Markt.", tag: "Messe", url: "https://www.prowein.com/" },
       { when: "Apr 2027 · Verona", t: "Vinitaly", d: "Italiens Leitmesse, viele Einkäufer aus Übersee.", tag: "Messe", url: "https://www.vinitaly.com/" },
-      { when: "Frühjahr 2027 · Neustadt/Weinstr.", t: "Mundus Vini", d: "Internationaler Weinpreis des Meininger Verlags.", tag: "Award", url: g("Mundus Vini 2027") },
+      { when: "Frühjahr 2027 · Neustadt/Weinstr.", t: "Mundus Vini", d: "Internationaler Weinpreis des Meininger Verlags.", tag: "Award", url: "https://www.mundusvini.com/" },
       { when: "Mai 2027 · London", t: "London Wine Fair", d: "Treffpunkt des britischen Handels und der Sommeliers.", tag: "Messe", url: "https://www.londonwinefair.com/" }
     ],
     "Auf der Quinta": [
