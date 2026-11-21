@@ -176,7 +176,7 @@ window.PLANSEL_I18N = (function () {
     const b = document.createElement("button");
     b.type = "button"; b.dataset.lang = code; b.textContent = label; b.title = name; b.lang = code;
     b.addEventListener("click", () => {
-      if (staticLang) { if (code !== staticLang) { save(code); location.href = "../" + code + "/" + location.hash; } return; }
+      if (staticLang) { if (code !== staticLang) { save(code); location.href = "../" + code + "/" + (location.pathname.split("/").pop() || "") + location.hash; } return; }
       apply(code);
     });
     box.appendChild(b);

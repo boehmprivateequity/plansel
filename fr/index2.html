@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="fr" data-static-lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Viveiros Plansel · Pépinière viticole en Alentejo</title>
+<meta name="description" content="Viveiros Plansel : plants de vigne greffés et certifiés des meilleurs cépages portugais, de notre pépinière de Montemor-o-Novo (Alentejo). Et aussi des oliviers et des services pour vignobles et oliveraies.">
+<link rel="canonical" href="https://www.plansel.com/fr/index2.html">
+<link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html">
+<link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html">
+<link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html">
+<link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html">
+<link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html">
+<link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html">
+<link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html">
+<meta property="og:title" content="Viveiros Plansel · Pépinière viticole en Alentejo">
+<meta property="og:image" content="https://www.plansel.com/img/viveiros/viticultura.jpg"><meta property="og:locale" content="fr_FR">
+<link rel="icon" href="../img/plansel-wappen-kraeftig.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../styles.css">
+<style>
+/* Viveiros – zweite Seite im Stil „Archiv der Rebschule“ */
+.v-hero { border-bottom: 1px solid var(--line); }
+.v-hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); align-items: end; padding-block: clamp(40px, 6vw, 80px) 0; }
+.v-hero h1 { font-size: var(--step-4); margin-top: 18px; }
+.v-hero .lede { margin-top: 22px; }
+.v-hero .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.v-hero figure { align-self: stretch; }
+.v-hero figure img { width: 100%; height: clamp(240px, 30vw, 440px); object-fit: cover; }
+.v-hero figcaption, .v-fig figcaption { font: italic .9rem/1.45 var(--f-display); color: var(--ink-2); padding: 10px 0 18px; }
+.v-hero figcaption b, .v-fig figcaption b { font-style: normal; font-weight: 500; color: var(--ink); margin-right: 6px; }
+.v-hero .logo-v { height: 44px; width: auto; margin-bottom: 4px; }
+
+/* Angebot: vier Bereiche */
+.v-areas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.v-areas li { border-right: 1px solid var(--line); }
+.v-areas li:last-child { border-right: 0; }
+.v-areas a { display: grid; gap: 10px; padding: 22px 20px 26px; text-decoration: none; height: 100%; }
+.v-areas li:first-child a { padding-left: 0; }
+.v-areas a:hover b { color: var(--gold-deep); }
+.v-areas img { width: 100%; aspect-ratio: 4/3; object-fit: cover; margin-bottom: 6px; }
+.v-areas .n { font: italic 1rem/1 var(--f-display); color: var(--gold-deep); }
+.v-areas b { font: 400 var(--step-1)/1.2 var(--f-display); }
+.v-areas span.d { color: var(--ink-2); font-size: .95rem; }
+
+/* Geschichte */
+.v-story { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.v-story p + p { margin-top: 1em; }
+.v-story .big { font: 400 var(--step-2)/1.3 var(--f-display); }
+.v-fig img { width: 100%; aspect-ratio: 3/2; object-fit: cover; }
+
+/* Weg einer Rebe: nummerierte Schritte */
+.v-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.v-steps li { padding: 22px 20px 30px 0; border-bottom: 1px solid var(--line); }
+.v-steps li:not(:nth-child(4n+1)) { padding-left: 20px; border-left: 1px solid var(--line); }
+.v-steps .n { font: italic 1rem/1 var(--f-display); color: var(--gold-deep); display: block; margin-bottom: 12px; }
+.v-steps b { font: 400 var(--step-1)/1.2 var(--f-display); display: block; margin-bottom: 8px; }
+.v-steps p { color: var(--ink-2); font-size: .95rem; }
+.v-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.v-pair img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+
+/* Zertifizierung */
+.v-cert { background: var(--night); color: var(--on-night); }
+.v-cert .wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding-block: clamp(48px, 7vw, 88px); }
+.v-cert .label-blue { width: 120px; height: 150px; background: #2F5DA8; color: #fff; display: grid; place-items: center; text-align: center; font: 500 .8rem/1.3 var(--f-text); letter-spacing: .12em; text-transform: uppercase; padding: 12px; position: relative; }
+.v-cert .label-blue::before { content: ""; position: absolute; top: 10px; left: 50%; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--night); }
+.v-cert h2 { font-size: var(--step-3); }
+.v-cert p { color: var(--on-night-2); margin-top: 14px; max-width: 60ch; font-size: var(--step-1); line-height: 1.5; }
+
+/* Sorten */
+.v-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.v-tabs button { border: 1px solid var(--line); background: transparent; padding: .6em 1.1em; font: 500 .9rem/1 var(--f-text); cursor: pointer; }
+.v-tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.v-grapes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 20px; }
+.v-grapes img, .v-grapes .noimg { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: var(--paper-2); }
+.v-grapes .noimg { display: grid; place-items: center; font: italic .9rem var(--f-display); color: var(--ink-2); }
+.v-grapes b { display: block; font: 400 var(--step-1)/1.2 var(--f-display); margin-top: 12px; }
+.v-grapes small { color: var(--ink-2); font-size: .85rem; display: flex; align-items: center; gap: 8px; }
+.v-grapes small::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #6B2430; }
+.v-grapes li[data-t="b"] small::before { background: #D9C27A; }
+.v-grapes li[hidden] { display: none; }
+.v-more { margin-top: 32px; font: italic 1rem/1.4 var(--f-display); color: var(--ink-2); }
+
+/* Oliven */
+.v-olive { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.v-olive img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+/* Kontakt */
+.v-contact { border-top: 1px solid var(--ink); display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); padding-top: 32px; }
+.v-contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 12px 24px; }
+.v-contact dt { font: italic 1rem/1.5 var(--f-display); color: var(--gold-deep); }
+.v-contact dd { margin: 0; }
+.v-contact .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.back-home { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--on-night); }
+.back-home img { height: 34px; width: auto; }
+
+@media (max-width: 960px) {
+  .v-hero .wrap, .v-story, .v-olive, .v-contact { grid-template-columns: minmax(0, 1fr); }
+  .v-areas, .v-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .v-areas li:nth-child(2n) { border-right: 0; }
+  .v-areas li:nth-child(odd) a { padding-left: 0; }
+  .v-steps li:not(:nth-child(4n+1)) { padding-left: 0; border-left: 0; }
+  .v-steps li:nth-child(2n) { padding-left: 20px; border-left: 1px solid var(--line); }
+  .v-grapes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .facts ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .v-areas, .v-steps { grid-template-columns: minmax(0, 1fr); }
+  .v-areas li { border-right: 0; border-bottom: 1px solid var(--line); }
+  .v-areas a { padding-left: 0; }
+  .v-steps li:nth-child(2n) { padding-left: 0; border-left: 0; }
+  .v-grapes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+  .v-pair { grid-template-columns: minmax(0, 1fr); }
+  .v-cert .wrap { grid-template-columns: minmax(0, 1fr); }
+  .v-contact dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .v-contact dd { margin-bottom: 10px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <!-- Das Plansel-Logo führt immer zurück zur Startseite -->
+    <a class="brand" href="index.html" aria-label="Plansel – accueil" id="home-link">
+      <img src="../img/plansel-wappen-kraeftig.svg" alt="Blason de Plansel" width="23" height="54">
+      <span class="brand-text"><b>PLANSEL</b><small>Viveiros · Pépinière viticole</small></span>
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="index.html" class="nav-home">← Plansel Group</a>
+      <a href="#angebot">Nos offres</a>
+      <a href="#weg">Production</a>
+      <a href="#sorten">Cépages</a>
+      <a href="#oliven">Oliviers</a>
+      <a href="#kontakt">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Sprache / Language" id="lang"></div>
+    <a class="btn head-cta" href="mailto:viveiros@plansel.com?subject=Anfrage%20Reben">Demander des plants</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="v-hero" aria-labelledby="v-title">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Viveiros Plansel · Montemor-o-Novo · Alentejo</p>
+        <h1 id="v-title">Des plants pour un vignoble réussi.</h1>
+        <p class="lede">Plants greffés issus des meilleurs cépages portugais. Certifiés et élevés dans notre propre pépinière en Alentejo.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:viveiros@plansel.com?subject=Anfrage%20Reben">Demander des plants</a>
+          <a class="btn btn--ghost" href="#sorten">Voir les cépages</a>
+        </div>
+        <p class="v-group"><a class="link" href="index.html">Viveiros Plansel fait partie du Plansel Group : vins, événements et savoir</a></p>
+      </div>
+      <figure>
+        <img src="../img/viveiros/viticultura.jpg" alt="Jeunes vignes sur terre rouge devant la chapelle blanche de la quinta" width="1400" height="933" fetchpriority="high">
+        <figcaption><b>Fig. 1</b> Jeunes vignes à la quinta, la chapelle à l'arrière-plan.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAKTEN -->
+  <div class="facts">
+    <div class="wrap">
+      <ul>
+        <li><b class="tnum">1975</b><small>Premières vignes à Montemor-o-Novo</small></li>
+        <li><b class="tnum">~50 %</b><small>des plants certifiés du Portugal issus de clones Plansel*</small></li>
+        <li><b class="tnum">50+</b><small>ans de sélection clonale de cépages portugais</small></li>
+        <li><b class="tnum">12</b><small>cépages au programme, plus porte-greffes et raisins de table</small></li>
+        <li><b>100 %</b><small>matériel végétal certifié</small></li>
+      </ul>
+      <p class="src">* Chiffre de la société Plansel, cité par Vinetur, 9 nov. 2026</p>
+    </div>
+  </div>
+
+  <!-- 01 ANGEBOT -->
+  <section class="sec" id="angebot" aria-labelledby="a-title">
+    <div class="wrap"><p class="page-mark"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Viveiros</span><span class="pm-n">01</span></p></div>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Ce que nous proposons</p>
+        <h2 id="a-title">De la vigne à l'olivier.</h2>
+        <p class="lede">Découvrez Viveiros Plansel et tout ce que nous proposons aux viticulteurs et oléiculteurs.</p>
+      </div>
+      <ul class="v-areas">
+        <li><a href="#weg"><img src="../img/viveiros/bacelos.jpg" alt="Rangs de plants greffés dans le champ de la pépinière" loading="lazy" width="1400" height="949"><span class="n">01</span><b>Pépinière</b><span class="d">Plants greffés, issus des meilleurs cépages portugais.</span></a></li>
+        <li><a href="#sorten"><img src="../img/viveiros/touriga-nacional.jpg" alt="Raisins de touriga nacional" loading="lazy" width="640" height="360"><span class="n">02</span><b>Cépages et porte-greffes</b><span class="d">L'histoire des cépages et porte-greffes que nous multiplions.</span></a></li>
+        <li><a href="#oliven"><img src="../img/viveiros/olivicultura.jpg" alt="Vieil olivier en Alentejo" loading="lazy" width="704" height="689"><span class="n">03</span><b>Oliviers</b><span class="d">Nos variétés d'olivier et leur évolution technique et scientifique.</span></a></li>
+        <li><a href="#kontakt"><img src="../img/viveiros/trator.jpg" alt="Tracteur au travail dans la pépinière" loading="lazy" width="1024" height="768"><span class="n">04</span><b>Services et produits</b><span class="d">Services et produits pour la vigne et l'oliveraie, sur demande.</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 02 GESCHICHTE -->
+  <section class="sec" style="padding-top:0" aria-labelledby="g-title">
+    <div class="wrap"><p class="page-mark"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Comment tout a commencé</span><span class="pm-n">02</span></p></div>
+    <div class="wrap v-story">
+      <div>
+        <p class="eyebrow">Comment tout a commencé</p>
+        <h2 id="g-title" style="font-size:var(--step-3);margin:16px 0 24px">Une pépinière qui a changé le Portugal.</h2>
+        <p class="big">Après l'achat de la Quinta de S. Jorge à Montemor-o-Novo, Jorge Böhm, allemand de naissance et profondément attaché au Portugal, fonde l'entreprise Plansel.</p>
+        <p>Elle s'est développée avec la pépinière, surtout avec les plants greffés, alors pratiquement inconnus au Portugal. Plus tard s'est ajoutée la multiplication d'oliviers par boutures semi-ligneuses.</p>
+        <p class="v-back"><a class="link" href="index.html#familie">Toute l'histoire de la famille Böhm-Lindemann</a></p>
+      </div>
+      <figure class="v-fig">
+        <img src="../img/bacelos-enxertados.jpg" alt="Plants greffés avec de la cire rouge sur la greffe" loading="lazy">
+        <figcaption><b>Fig. 2</b> Plants greffés. La cire rouge protège la greffe jusqu'à la reprise.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 WEG EINER REBE -->
+  <section class="sec" id="weg" style="padding-top:0" aria-labelledby="w-title">
+    <div class="wrap"><p class="page-mark"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Production</span><span class="pm-n">03</span></p></div>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Le parcours d'un plant</p>
+        <h2 id="w-title">Du bois au plant prêt à planter, en huit étapes.</h2>
+        <p class="lede">De la taille à l'expédition, chaque matériel reste étiqueté par cépage, clone et catégorie de certification.</p>
+      </div>
+      <ol class="v-steps">
+        <li><span class="n">01</span><b>Couper les porte-greffes</b><p>Les porte-greffes sont coupés au champ, triés par calibre, éborgnés à la machine, liés en bottes de 200 sarments et désinfectés.</p></li>
+        <li><span class="n">02</span><b>Récolter les greffons</b><p>Le bois des cépages est coupé au champ, mis en bottes, étiqueté et séparé par clone et catégorie de certification.</p></li>
+        <li><span class="n">03</span><b>Stockage au froid</b><p>En chambre froide, à humidité et température contrôlées.</p></li>
+        <li><span class="n">04</span><b>Greffage</b><p>Du personnel qualifié greffe sur table ; la machine réalise la coupe en oméga.</p></li>
+        <li><span class="n">05</span><b>Stratification</b><p>Dans des caisses de tourbe, porte-greffe et greffon se soudent dans une chambre chaude et humide.</p></li>
+        <li><span class="n">06</span><b>Pépinière au champ</b><p>Les plants poussent au champ jusqu'à l'automne ou l'hiver. Plansel et les services officiels contrôlent cépage et santé.</p></li>
+        <li><span class="n">07</span><b>Tri et paraffinage</b><p>Chaque plant est contrôlé selon les normes légales, ses racines sont taillées, puis il est paraffiné, compté et stocké en local climatisé.</p></li>
+        <li><span class="n">08</span><b>Expédition et plantation</b><p>En cartons doublés de plastique contre le dessèchement. Avant la plantation, les racines sont taillées ; on plante à la main ou à la machine.</p></li>
+      </ol>
+      <div class="v-pair">
+        <figure class="v-fig"><img src="../img/viveiros/bacelos.jpg" alt="Rangs de plants greffés dans le champ de la pépinière" loading="lazy"><figcaption><b>Fig. 3</b> Plants greffés dans le champ de la pépinière.</figcaption></figure>
+        <figure class="v-fig"><img src="../img/viveiros/trator.jpg" alt="Tracteur au travail dans la pépinière" loading="lazy"><figcaption><b>Fig. 4</b> Travail à la pépinière.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap v-backrow"><a class="link" href="index.html#wissenschaft">La science derrière nos vignes</a></div>
+
+  <!-- ZERTIFIZIERUNG -->
+  <section class="v-cert" aria-labelledby="c-title">
+    <div class="wrap">
+      <div class="label-blue" aria-hidden="true">Certificado</div>
+      <div>
+        <p class="eyebrow" style="color:var(--gold)">Certification</p>
+        <h2 id="c-title" style="margin-top:14px">Tout le matériel végétal est certifié.</h2>
+        <p>Nous vendons dans la catégorie « certifié », reconnaissable à l'étiquette bleue. Le matériel de nos champs de pieds-mères va à notre pépinière, aux viticulteurs et à d'autres pépiniéristes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SORTEN -->
+  <section class="sec" id="sorten" aria-labelledby="s-title">
+    <div class="wrap"><p class="page-mark"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Cépages</span><span class="pm-n">04</span></p></div>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Viticultura</p>
+        <h2 id="s-title">Les cépages que nous multiplions.</h2>
+        <p class="lede">Cépages portugais issus de la sélection clonale de Plansel.</p>
+      </div>
+      <div class="v-tabs" role="group" aria-label="Filtre">
+        <button type="button" data-f="all" aria-pressed="true">Tous les cépages</button>
+        <button type="button" data-f="t" aria-pressed="false">Cépages rouges</button>
+        <button type="button" data-f="b" aria-pressed="false">Cépages blancs</button>
+      </div>
+      <ul class="v-grapes">
+        <li data-t="t"><img src="../img/viveiros/touriga-nacional.jpg" alt="Touriga Nacional" loading="lazy" width="640" height="360"><b>Touriga Nacional</b><small>Cépage rouge</small></li>
+        <li data-t="t"><img src="../img/viveiros/touriga-franca.jpg" alt="Touriga Franca" loading="lazy" width="640" height="360"><b>Touriga Franca</b><small>Cépage rouge</small></li>
+        <li data-t="t"><img src="../img/viveiros/trincadeira.jpg" alt="Trincadeira" loading="lazy" width="640" height="360"><b>Trincadeira</b><small>Cépage rouge</small></li>
+        <li data-t="t"><img src="../img/viveiros/aragonez.jpg" alt="Aragonez" loading="lazy" width="640" height="360"><b>Aragonez</b><small>Cépage rouge</small></li>
+        <li data-t="t"><img src="../img/viveiros/tinta-barroca.jpg" alt="Tinta Barroca" loading="lazy" width="640" height="360"><b>Tinta Barroca</b><small>Cépage rouge</small></li>
+        <li data-t="t"><img src="../img/viveiros/castelao.jpg" alt="Castelão" loading="lazy" width="640" height="360"><b>Castelão</b><small>Cépage rouge</small></li>
+        <li data-t="b"><img src="../img/viveiros/arinto.jpg" alt="Arinto" loading="lazy" width="640" height="360"><b>Arinto</b><small>Cépage blanc</small></li>
+        <li data-t="b"><img src="../img/viveiros/antao-vaz.jpg" alt="Antão Vaz" loading="lazy" width="640" height="360"><b>Antão Vaz</b><small>Cépage blanc</small></li>
+        <li data-t="b"><img src="../img/viveiros/loureiro.jpg" alt="Loureiro" loading="lazy" width="640" height="360"><b>Loureiro</b><small>Cépage blanc</small></li>
+        <li data-t="b"><img src="../img/viveiros/gouveio.jpg" alt="Gouveio" loading="lazy" width="640" height="360"><b>Gouveio</b><small>Cépage blanc</small></li>
+        <li data-t="b"><img src="../img/viveiros/viosinho.jpg" alt="Viosinho" loading="lazy" width="640" height="360"><b>Viosinho</b><small>Cépage blanc</small></li>
+        <li data-t="b"><div class="noimg">Photo à venir</div><b>Alvarinho</b><small>Cépage blanc</small></li>
+      </ul>
+      <p class="v-more">Raisins de table, porte-greffes, clones et quantités : sur demande.</p>
+    </div>
+  </section>
+
+  <div class="wrap v-backrow"><a class="link" href="index.html#weine">Des vins issus de ces cépages : acheter les vins Plansel</a></div>
+
+  <!-- 05 OLIVEN -->
+  <section class="sec" id="oliven" style="padding-top:0" aria-labelledby="o-title">
+    <div class="wrap"><p class="page-mark"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Olivicultura</span><span class="pm-n">05</span></p></div>
+    <div class="wrap v-olive">
+      <figure class="v-fig"><img src="../img/viveiros/olivicultura.jpg" alt="Vieil olivier en Alentejo" loading="lazy" style="aspect-ratio:1"><figcaption><b>Fig. 5</b> Olivier en Alentejo.</figcaption></figure>
+      <div>
+        <p class="eyebrow">Olivicultura</p>
+        <h2 id="o-title" style="font-size:var(--step-3);margin:16px 0 20px">Les oliviers aussi viennent de notre pépinière.</h2>
+        <p class="lede">Nous multiplions des variétés d'olivier par boutures semi-ligneuses et suivons leur évolution technique et scientifique.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap v-backrow"><a class="link" href="index.html#events">Événements du vin au Portugal : vers l'accueil Plansel</a></div>
+
+  <!-- 06 KONTAKT -->
+  <section class="sec" id="kontakt" style="padding-top:0" aria-labelledby="k-title">
+    <div class="wrap"><p class="page-mark"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Contact</span><span class="pm-n">06</span></p></div>
+    <div class="wrap">
+      <div class="v-contact">
+        <div>
+          <p class="eyebrow">Commander des plants</p>
+          <h2 id="k-title" style="font-size:var(--step-3);margin:16px 0 20px">Des questions ? Écrivez-nous.</h2>
+          <p class="lede">Indiquez-nous cépages, clones, porte-greffes et quantités. Nous répondons avec disponibilités et offre.</p>
+          <div class="actions">
+            <a class="btn" href="mailto:viveiros@plansel.com?subject=Anfrage%20Reben">Écrire un e-mail</a>
+            <a class="btn btn--ghost" href="tel:+351266899260">Appeler</a>
+            <a class="btn btn--ghost" href="index.html">Accueil Plansel</a>
+          </div>
+        </div>
+        <dl>
+          <dt>Adresse</dt><dd>Viveiros Plansel, Quinta de São Jorge<br>Estrada Municipal 537, Porto das Lãs<br>7050-203 Montemor-o-Novo, Portugal</dd>
+          <dt>E-mail</dt><dd><a href="mailto:viveiros@plansel.com">viveiros@plansel.com</a></dd>
+          <dt>Téléphone</dt><dd><a href="tel:+351266899260">+351 266 899 260</a><br><small class="muted">Appel vers un fixe portugais</small></dd>
+          <dt>Suivre</dt><dd><a href="https://www.instagram.com/viveirosplansel/" target="_blank" rel="noopener">Instagram</a>  ·  <a href="https://www.facebook.com/Viveiros-Plansel-Lda-124552524778385/" target="_blank" rel="noopener">Facebook</a></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="back-home" href="index.html" id="home-link-2"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="15" height="34" style="filter:invert(1) brightness(1.6)"><span>Retour à l'accueil</span></a>
+    <div class="base" style="margin-top:28px">
+      <span class="legal-links">© 2026 Plansel Group ·  <a href="../ficha-tecnica.html">Ficha técnica / Impressum</a>  ·  <a href="../privacidade.html">Privacidade / Datenschutz</a></span>
+      <a class="lr" href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M5 3h11l3 3v15H5zM7 8h10v1.6H7zm0 3.5h10v1.6H7zm0 3.5h7v1.6H7z"></path></svg><span>Livro de Reclamações</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Sprache von der Herkunftsseite übernehmen (?l=de) */
+(function () { var m = /[?&]l=([a-z]{2})/.exec(location.search); if (m) { try { localStorage.setItem("plansel-lang", m[1]); } catch (e) {} } })();
+</script>
+<script src="../i18n-texts.js"></script>
+<script src="../i18n.js"></script>
+<script>
+// Logo und Footer-Link führen zur Startseite in der gewählten Sprache
+function setHome() {}
+setHome(window.PLANSEL_I18N ? window.PLANSEL_I18N.lang : "pt");
+document.addEventListener("plansel:lang", e => setHome(e.detail));
+// Sortenfilter
+document.querySelectorAll(".v-tabs button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".v-tabs button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  document.querySelectorAll(".v-grapes li").forEach(li => { li.hidden = b.dataset.f !== "all" && li.dataset.t !== b.dataset.f; });
+}));
+</script>
+
+
+</body></html>
