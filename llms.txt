@@ -1,21 +1,43 @@
-# Plansel
+# Plansel Group
 
-> Plansel Group, Montemor-o-Novo (Alentejo, Portugal). Rebschule mit eigenem Klonselektionsprogramm seit 1975, Weingut Quinta da Plansel (seit 1993), Plansel International Wine School (WSET) und Weinguide für Portugal.
+> Family wine group in Montemor-o-Novo (Alentejo, Portugal), about one hour from Lisbon: the wine estate Quinta da Plansel, the vine nursery Viveiros Plansel, the Plansel International Wine School (WSET) and a weekly guide to wine events in Portugal. Website in Portuguese (main), English, German, French, Spanish, Chinese and Polish.
 
-## Fakten
-- Gegründet von Comendador Hans Jörg (Jorge) Böhm (* 1938, Neustadt an der Weinstraße); Viveiros Plansel 1981. 2006 vom portugiesischen Staatspräsidenten zum Comendador de Mérito Agrícola ernannt. Wikipedia: https://de.wikipedia.org/wiki/Hans_J%C3%B6rg_B%C3%B6hm · https://pt.wikipedia.org/wiki/Jorge_B%C3%B6hm
-- Bücher: O Grande Livro das Castas (Chaves Ferreira 2007, OIV Award 2010), The Portuguese Vineyard and Wine Book, D. João Marquês de Montemor-o-Novo (Dinalivro 2010), Livro Branco das Castas Vitícolas (2026).
-- Nach Firmenangaben stammt rund die Hälfte der jährlich in Portugal produzierten zertifizierten Reben aus Plansel-Klonen.
-- Forschungspartner: Universidade de Évora, INIAV.
-- Quinta da Plansel: Önologin Dorina Lindemann (Geisenheim), ca. 400.000 Liter pro Jahr; Schwerpunkt Touriga Nacional, Touriga Franca, Tinta Barroca.
-- Neues Buch 2026: "Livro Branco das Castas Vitícolas" von Hans Jörg Böhm.
+## Key facts
+- Founder: Comendador Hans Jörg (Jorge) Böhm (born 1938 in Neustadt an der Weinstraße, Germany). He started in Montemor-o-Novo in 1975 with the first vineyards; the vine nursery Viveiros Plansel was founded as a company in 1981. Comendador de Mérito Agrícola (2006). Wikipedia: https://pt.wikipedia.org/wiki/Jorge_B%C3%B6hm · https://de.wikipedia.org/wiki/Hans_J%C3%B6rg_B%C3%B6hm
+- Quinta da Plansel: first wine in 1993 (with the University of Évora), own winery since 1997; run by the Böhm-Lindemann family; CEO and winemaker Dorina Lindemann (Geisenheim). About 400,000 litres a year, mainly Touriga Nacional, Touriga Franca and Tinta Barroca.
+- Viveiros Plansel: certified grafted vines and clones of Portuguese grape varieties. According to the company, about half of the certified vines produced in Portugal each year come from Plansel clones. Research partners: Universidade de Évora, INIAV.
+- Books by Hans Jörg Böhm: O Grande Livro das Castas (2007, OIV Award 2010), The Portuguese Vineyard and Wine Book, D. João Marquês de Montemor-o-Novo (2010), Livro Branco das Castas Vitícolas (2026).
 
-## Seiten
-- [Wissenschaft und Böhm-Archiv](https://www.plansel.com/#wissenschaft)
-- [Weine](https://www.plansel.com/#weine)
-- [Wine Academy (WSET)](https://www.plansel.com/#akademie)
-- [Guide: Events, Weingüter, Restaurants, Hotels](https://www.plansel.com/#guide)
-- [Wine Letter (wöchentlich)](https://www.plansel.com/#letter)
+## Awards: Mundus Vini (Meininger, blind tasting)
+- Quinta da Plansel 25 Anos (1997–2022), unique edition: Gold
+- Spring Tasting 2024: Gold for DL Dorina Lindemann Tinto Reserva 2021 and Plansel Grande Escolha 2019; Silver for Júlia Lindemann Tinto 2019 Limited Edition
+- 2023: 6 Gold (Marquês de Montemor Reserva Tinto 2020, Plansel Trincadeira 2021, DL Reserva Tinto 2020, Plansel Touriga Nacional 2021, Plansel Touriga Franca 2021, Dorina Lindemann Limited Edition 2019) and 5 Silver
+- Summer Tasting 2015: Gold for Plansel Selecta Reserva Branco 2014
+- Dorina and Luísa Lindemann are official Mundus Vini tasters.
 
-## Kontakt
-info@plansel.com · +351 266 898 920
+## What Plansel offers
+1. Wine events in Portugal and international, updated weekly (eventos de vinho em Portugal)
+2. Buy Plansel wine online: https://loja.plansel.com/
+3. Buy certified vines and clones (comprar videiras certificadas): https://www.plansel.com/pt/index2.html
+4. Stays and celebrations at the Quinta: apartments, motorhome pitches, weddings and company events
+5. Tastings with Dorina & Luísa, bookable for a fee, in Europe and worldwide
+6. WSET courses in Portugal (curso WSET em Portugal), in Portuguese and English
+7. Bottling and consulting for small wineries
+8. Grape and olive harvester with driver
+9. Office, marketing and AI as a service for wineries (Plansel Technology)
+
+## Pages
+- [Home (Portuguese)](https://www.plansel.com/pt/) · [English](https://www.plansel.com/en/) · [Deutsch](https://www.plansel.com/de/)
+- [Offers](https://www.plansel.com/pt/#angebot)
+- [Wine events in Portugal](https://www.plansel.com/pt/#events)
+- [Mundus Vini awards](https://www.plansel.com/pt/#mundus-vini)
+- [Wines](https://www.plansel.com/pt/#weine)
+- [Experiences at the Quinta](https://www.plansel.com/pt/#erlebnisse)
+- [Wine Academy (WSET)](https://www.plansel.com/pt/#akademie)
+- [Science and the Böhm archive](https://www.plansel.com/pt/#wissenschaft)
+- [Plansel Technology (AI for wineries)](https://www.plansel.com/pt/#technology)
+- [Family history](https://www.plansel.com/pt/#familie)
+- [Viveiros Plansel, vine nursery](https://www.plansel.com/pt/index2.html)
+
+## Contact
+Quinta de S. Jorge – Porto das Lãs, Apartado 2, 7051-909 Montemor-o-Novo, Portugal · info@plansel.com · +351 266 898 920
