@@ -169,16 +169,29 @@ window.PLANSEL_I18N = (function () {
     const sel = document.getElementById("nl-lang"); if (sel) sel.value = code;
     try { localStorage.setItem("plansel-lang", code); } catch (e) {}
   }
+  // Feste Sprachseiten (/pt/, /en/ …) sind schon fertig übersetzt; der Umschalter wechselt dort die Seite.
+  const staticLang = document.documentElement.dataset.staticLang || "";
+  const save = code => { try { localStorage.setItem("plansel-lang", code); } catch (e) {} };
   LANGS.forEach(([code, label, name]) => {
     const b = document.createElement("button");
     b.type = "button"; b.dataset.lang = code; b.textContent = label; b.title = name; b.lang = code;
-    b.addEventListener("click", () => apply(code));
+    b.addEventListener("click", () => {
+      if (staticLang) { if (code !== staticLang) { save(code); location.href = "../" + code + "/" + location.hash; } return; }
+      apply(code);
+    });
     box.appendChild(b);
   });
 
-  let start = "de";
-  try { start = localStorage.getItem("plansel-lang") || start; } catch (e) {}
-  if (!T[start] && start !== "de") start = "de";
-  apply(start);
-  return { apply, tr, get lang() { return lang; } };
+  if (staticLang) {
+    lang = staticLang;
+    box.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    const sel = document.getElementById("nl-lang"); if (sel) sel.value = lang;
+  } else {
+    // Quellseite: Portugiesisch ist Standard, sonst die zuletzt gewählte Sprache
+    let start = "pt";
+    try { start = localStorage.getItem("plansel-lang") || start; } catch (e) {}
+    if (!T[start] && start !== "de") start = "pt";
+    apply(start);
+  }
+  return { apply, tr, get lang() { return lang; }, LANGS: LANGS.map(l => l[0]) };
 })();

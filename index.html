@@ -3,10 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Plansel</title>
+<script id="lang-redirect">
+/* Startseite: sofort zur passenden Sprachseite. Standard ist Portugiesisch. Mit ?quelle bleibt die Quellseite offen. */
+(function () {
+  if (/[?&]quelle\b/.test(location.search)) return;
+  var L = ["pt", "en", "de", "fr", "es", "zh", "pl"], s = null;
+  try { s = localStorage.getItem("plansel-lang"); } catch (e) {}
+  if (L.indexOf(s) < 0) { var n = ((navigator.languages && navigator.languages[0]) || navigator.language || "pt").slice(0, 2).toLowerCase(); s = L.indexOf(n) >= 0 ? n : "pt"; }
+  location.replace(s + "/" + location.hash);
+})();
+</script>
+<title>Plansel · Wein-Events in Portugal, Weine &amp; Wissen</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Plansel – gehobene Weine aus dem Alentejo, gewachsen auf den Reben, die Portugals Weinbau tragen. Weinshop, Enoturismo, Wine Academy (WSET), Weinguide Portugal und der wöchentliche Plansel Wine Letter.">
-<link rel="canonical" href="https://www.plansel.com/">
+<meta name="description" content="Plansel: Wein-Events in Portugal und international, jede Woche neu. Dazu Plansel-Weine aus dem Alentejo, Rebpflanzen, Übernachten auf der Quinta, Sommelier-Ausbildung (WSET), Consulting und KI für Weingüter.">
+<link rel="canonical" href="https://www.plansel.com/pt/">
 <link rel="alternate" hreflang="de" href="https://www.plansel.com/de/">
 <link rel="alternate" hreflang="en" href="https://www.plansel.com/en/">
 <link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/">
@@ -14,13 +24,12 @@
 <link rel="alternate" hreflang="es" href="https://www.plansel.com/es/">
 <link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/">
 <link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/">
+<link rel="alternate" hreflang="x-default" href="https://www.plansel.com/">
 <meta property="og:title" content="Plansel – Top-Weine, Top-Erlebnisse, wissenschaftlich belegt">
 <meta property="og:description" content="Gehobene Weine aus Portugal, von den Reben, auf denen Portugals Weinbau steht.">
 <meta property="og:image" content="https://www.plansel.com/img/hero-quinta-aerial.jpg">
-<link rel="icon" href="img/logo-figura.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<link rel="icon" href="img/plansel-wappen-kraeftig.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="styles.css">
 
 <script type="application/ld+json">
@@ -77,16 +86,16 @@
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Plansel">
-      <img src="img/logo-figura.png" alt="" width="17" height="40">
-      <span>PLANSEL</span>
+    <a class="brand" href="#top" aria-label="Plansel – Startseite">
+      <img src="img/plansel-wappen-kraeftig.svg" alt="Wappen von Plansel" width="23" height="54">
+      <span class="brand-text"><b>PLANSEL</b><small>Quinta da Plansel · Portugal</small></span>
     </a>
     <nav class="nav" aria-label="Navigation">
+      <a href="#angebot">Angebot</a>
+      <a href="#events">Events</a>
       <a href="#weine" data-i18n="nav.wines">Weine</a>
-      <a href="#erlebnisse" data-i18n="nav.exp">Erlebnisse</a>
       <a href="#akademie" data-i18n="nav.academy">Academy</a>
-      <a href="#wissenschaft" data-i18n="nav.science">Wissenschaft</a>
-      <a href="#guide" data-i18n="nav.guide">Guide</a>
+      <a href="#technology">Technology</a>
     </nav>
     <div class="lang" role="group" aria-label="Sprache / Language" id="lang"></div>
     <a class="btn head-cta" href="https://loja.plansel.com/" target="_blank" rel="noopener" data-i18n="cta.shop">Shop</a>
@@ -95,21 +104,77 @@
 
 <main id="top">
 
-  <!-- HERO: Verkauf zuerst -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-text">
-      <p class="eyebrow" data-i18n="hero.eyebrow">Alentejo · Portugal · seit 1975</p>
-      <h1 id="hero-title" data-i18n-html="hero.title">Weine aus den Reben, auf denen <em>Portugal wächst.</em></h1>
-      <p class="hero-lede" data-i18n="hero.text">Jedes zweite Weingut in Portugal pflanzt Reben aus Plansel-Selektion. Die besten davon keltern wir selbst: gehobene Weine aus dem Alentejo, belegt durch 50 Jahre Forschung.</p>
-      <div class="actions">
-        <a class="btn" href="#weine" data-i18n="hero.buy">Weine entdecken</a>
-        <a class="link" href="#erlebnisse" data-i18n="hero.book">Weingut besuchen</a>
+  <!-- 01 ANGEBOT: was man über Plansel bekommt -->
+  <section class="sec offer" id="angebot" aria-labelledby="offer-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Unsere Produkte</span><span class="pm-n">01</span></p></div>
+    <div class="wrap">
+      <div class="offer-banner">
+        <img class="ob-photo" src="img/banner-vinha.jpg" alt="Rebzeilen der Quinta da Plansel im Alentejo" loading="lazy" width="1800" height="1200">
+        <div class="ob-seal" aria-hidden="true">
+          <img class="ob-ring" src="img/selo-quinta.png" alt="" width="960" height="1000">
+          <img class="ob-crest" src="img/plansel-wappen-kraeftig.svg" alt="" width="23" height="54">
+        </div>
+        <div class="ob-text">
+          <p class="eyebrow">Alles von Plansel auf einen Blick</p>
+          <h2 id="offer-title">Was Sie bei Plansel finden.</h2>
+        </div>
       </div>
+      <p class="offer-lede">Vom Wein im Glas bis zur Rebe im Boden: ein Familienbetrieb, der Weingüter seit 50 Jahren begleitet.</p>
+      <ol class="offers">
+        <li><a href="#events"><span class="n">01</span><b>Wein-Events</b><span class="d">Veranstaltungen in Portugal und international, jede Woche neu.</span></a></li>
+        <li><a href="https://loja.plansel.com/" target="_blank" rel="noopener"><span class="n">02</span><b>Plansel-Wein online kaufen</b><span class="d">Tinto, Branco, Rosé aus dem Alentejo, direkt vom Weingut.</span></a></li>
+        <li><a href="https://plansel.com/viveiros" target="_blank" rel="noopener"><span class="n">03</span><b>Rebpflanzen kaufen</b><span class="d">Zertifizierte Reben und Klone von Viveiros Plansel.</span></a></li>
+        <li><a href="https://www.adega.plansel.com/enoturismo" target="_blank" rel="noopener"><span class="n">04</span><b>Übernachten &amp; Feiern auf der Quinta</b><span class="d">Wohnungen, Stellplatz für Wohnmobile und Räume für Hochzeiten, Firmen und Feste, mit oder ohne Personal.</span></a></li>
+        <li><a href="mailto:info@plansel.com?subject=Verkostung%20mit%20Plansel%20buchen"><span class="n">05</span><b>Verkostungen mit Dorina &amp; Luísa</b><span class="d">Gegen Honorar buchbar: Wir kommen zu Ihrem Event, in Hotels und auf Messen, in Europa und weltweit, auch als Show-Verkostung. Beide sind offizielle Verkosterinnen bei Mundus Vini.</span></a></li>
+        <li><a href="#akademie"><span class="n">06</span><b>Sommelier-Ausbildung</b><span class="d">WSET-Kurse nach Londoner Standard, international anerkannt, auf Portugiesisch und Englisch.</span></a></li>
+        <li><a href="mailto:info@plansel.com?subject=Abf%C3%BCllung%20und%20Consulting"><span class="n">07</span><b>Abfüllung &amp; Consulting</b><span class="d">Kleine Weingüter füllen bei uns ab und bekommen Beratung von drei Önologen, mit deutschem und internationalem Know-how.</span></a></li>
+        <li><a href="mailto:info@plansel.com?subject=Vollernter%20mit%20Fahrer"><span class="n">08</span><b>Vollernter mit Fahrer</b><span class="d">Maschinelle Lese für Wein und Oliven: Wir stellen Vollernter samt erfahrenem Fahrer.</span></a></li>
+        <li><a href="#technology"><span class="n">09</span><b>Büro, Marketing &amp; KI als Service</b><span class="d">Buchhaltung, Instagram und Website mit Shop für kleine Weingüter. Dazu Plansel Technology: KI-Anwendungen und Schulungen für Chefs.</span></a></li>
+      </ol>
     </div>
-    <figure class="hero-img">
-      <img src="img/hero-quinta-aerial.jpg" alt="Luftaufnahme der Quinta da Plansel bei Montemor-o-Novo" fetchpriority="high" width="1800" height="1198">
-      <figcaption>Quinta da Plansel, Montemor-o-Novo. Rebschule, Weinberge und Keller auf einem Gut.</figcaption>
-    </figure>
+  </section>
+
+  <!-- 02 EVENTS: sofort sehen, was los ist -->
+  <section class="now" id="events" aria-labelledby="now-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Events</span><span class="pm-n">02</span></p></div>
+    <div class="wrap">
+      <div class="now-head">
+        <h1 id="now-title">Was diese Woche rund um Wein in Portugal passiert.</h1>
+        <p class="now-lede">Weinfeste, Verkostungen, Messen und Restaurant-Tipps. Jeden Donnerstag aktualisiert, mit direktem Link zum Veranstalter.</p>
+      </div>
+
+      <div class="ev-box">
+        <div class="ev-cols">
+          <div class="ev-col">
+            <h2 class="ev-h ev-h--top">Portugal</h2>
+            <ul class="ev-list" id="ev-pt" data-dyn></ul>
+          </div>
+          <div class="ev-col">
+            <h2 class="ev-h ev-h--top">International</h2>
+            <ul class="ev-list" id="ev-int" data-dyn></ul>
+            <h2 class="ev-h ev-h--gap">Restaurant-Tipps</h2>
+            <ul class="ev-list" id="ev-rest" data-dyn></ul>
+          </div>
+        </div>
+      </div>
+      <div class="now-foot">
+        <p class="note">Termine ohne Gewähr. Bitte vor der Reise beim Veranstalter prüfen.</p>
+        <details class="ev-submit">
+          <summary>Event melden</summary>
+          <form id="ev-form" class="ev-form">
+            <p class="ev-form-intro">Sie organisieren ein Wein-Event in Portugal? Tragen Sie es ein. Wir prüfen jeden Eintrag vor der Veröffentlichung.</p>
+            <label>Name des Events<input name="name" required placeholder="z. B. Festa do Vinho"></label>
+            <label>Datum<input name="date" required placeholder="z. B. 12.–14. Juni 2027"></label>
+            <label>Ort<input name="place" required placeholder="z. B. Évora"></label>
+            <label>Link zum Event<input name="link" type="url" placeholder="https://"></label>
+            <label>Ihre E-Mail<input name="mail" type="email" required autocomplete="email"></label>
+            <button class="btn" type="submit">Event senden</button>
+            <p class="ev-msg" id="ev-msg" aria-live="polite" data-dyn></p>
+          </form>
+        </details>
+      </div>
+      <div class="ad ad--wide" aria-label="Werbefläche">Anzeige · 970 × 250 Billboard · über symplr</div>
+    </div>
   </section>
 
   <!-- FAKTEN -->
@@ -128,6 +193,7 @@
 
   <!-- WEINE -->
   <section class="sec" id="weine" aria-labelledby="wine-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Weine</span><span class="pm-n">03</span></p></div>
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow" data-i18n="wine.eyebrow">Quinta da Plansel · Weine</p>
@@ -135,14 +201,14 @@
         <div class="dorina">
           <div>
             <p class="lede" data-i18n="wine.lede">Dorina, Önologin aus Geisenheim, keltert seit 1993 aus den Reben ihres Vaters. Von jeder Flasche wissen wir, von welchem Klon sie stammt.</p>
-            <a class="wa" href="https://wa.me/351939717421" target="_blank" rel="noopener" title="+351 939 717 421">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
-              <span data-i18n="wine.wa">Dorina schreiben</span>
-            </a>
           </div>
           <figure>
             <img src="img/dorina-lindemann.jpg" alt="Önologin Dorina verkostet Rotwein im Barriquekeller der Quinta da Plansel" loading="lazy" width="255" height="198">
             <figcaption><b>Dorina</b><span data-i18n="wine.dorina">Die Wein-Visionärin</span></figcaption>
+            <a class="wa" href="https://wa.me/351939717421" target="_blank" rel="noopener" title="+351 939 717 421">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+              <span data-i18n="wine.wa">Dorina schreiben</span>
+            </a>
           </figure>
         </div>
       </div>
@@ -204,7 +270,8 @@
   </section>
 
   <!-- ERLEBNISSE -->
-  <section class="sec" id="erlebnisse" aria-labelledby="exp-title" style="padding-top:0">
+  <section class="sec" id="erlebnisse" aria-labelledby="exp-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Erlebnisse</span><span class="pm-n">04</span></p></div>
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Enoturismo · Quinta da Plansel</p>
@@ -222,6 +289,7 @@
 
   <!-- ACADEMY -->
   <section class="sec academy" id="akademie" aria-labelledby="acad-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Academy</span><span class="pm-n">05</span></p></div>
     <div class="wrap split">
       <figure><img src="img/wine-school-tasting.jpg" alt="Verkostung zwischen Barriquefässern in der Plansel International Wine School" loading="lazy"></figure>
       <div>
@@ -242,6 +310,7 @@
 
   <!-- WISSENSCHAFT: der Beweis hinter jeder Flasche -->
   <section class="sec science" id="wissenschaft" aria-labelledby="sci-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Wissenschaft</span><span class="pm-n">06</span></p></div>
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow" data-i18n="sci.eyebrow">Plansel Science · Das Böhm-Archiv</p>
@@ -249,12 +318,12 @@
         <p class="lede" data-i18n="sci.lede">Plansel heißt „Plantas Seleccionadas“. Hinter dem Namen steht ein Forschungsprogramm, das mit Universitäten arbeitet und die Rebsorten Portugals für das Klima von morgen vorbereitet.</p>
       </div>
 
+      <div class="sci-split">
+      <div class="sci-pair">
       <figure class="plate">
         <img src="img/bacelos-enxertados.jpg" alt="Frisch gepfropfte Rebstecklinge mit rotem Veredelungswachs in einem Feld der Rebschule" loading="lazy" width="1600" height="1066">
         <figcaption><b>Abb. 1</b> Gepfropfte Reben in der Rebschule Viveiros Plansel. Das rote Wachs schützt die Veredelungsstelle, bis die Rebe angewachsen ist.</figcaption>
       </figure>
-
-      <div class="founder">
         <figure class="portrait">
           <img src="img/comendador-jorge-boehm.webp" alt="Comendador Jorge Böhm in seiner Bibliothek mit dem Grande Livro das Castas" loading="lazy">
           <figcaption>
@@ -262,6 +331,8 @@
             <span class="credit">Comendador Jorge Böhm · Bekannt aus Forbes Portugal</span>
           </figcaption>
         </figure>
+      </div>
+      <div class="founder founder--text">
         <div>
           <blockquote>„Portugal braucht seine eigene Forschung, damit es nicht von Sorten abhängig wird, die zu seinem Boden und Klima nicht passen.“</blockquote>
           <div class="bio">
@@ -279,11 +350,12 @@
           </div>
         </div>
       </div>
+      </div>
 
       <!-- BÜCHER: Hauptwerk groß, weitere Werke klein -->
       <div class="library" id="buch">
         <figure class="lib-main">
-          <span class="crop"><img src="img/livros/grande-livro-das-castas.jpg" alt="Buchcover: Portugal Vitícola – O Grande Livro das Castas, Autor-Koordinator Jorge Böhm, Chaves Ferreira Publicações" loading="lazy" width="480" height="640"></span>
+          <span class="crop"><img src="img/livros/grande-livro-das-castas-cover.jpg" alt="Buchcover: Portugal Vitícola – O Grande Livro das Castas, Autor-Koordinator Jorge Böhm, Chaves Ferreira Publicações" loading="lazy" width="418" height="548"></span>
           <span class="award">OIV Award 2010</span>
         </figure>
         <div class="lib-text">
@@ -312,7 +384,7 @@
             <div><span class="tag-new">English</span><b>The Portuguese Vineyard and Wine Book</b><small>Geschichte, Rebsorten, Terroir, Weinregionen und Essen zum Wein.</small></div>
           </li>
           <li>
-            <img src="img/livros/marques-de-montemor.jpg" alt="Buchcover: D. João, Marquês de Montemor-o-Novo – Uma vida entre duas épocas" loading="lazy" width="224" height="224">
+            <img src="img/livros/marques-de-montemor-cover.jpg" alt="Buchcover: D. João, Marquês de Montemor-o-Novo – Uma vida entre duas épocas" loading="lazy" width="114" height="156">
             <div><span class="tag-new">Dinalivro · 2010</span><b>D. João, Marquês de Montemor-o-Novo</b><small>Die Geschichte hinter unserer Weinlinie Marquês de Montemor.</small></div>
           </li>
         </ul>
@@ -345,26 +417,63 @@
     </div>
   </section>
 
-  <!-- GUIDE -->
-  <section class="sec" id="guide" aria-labelledby="guide-title">
+  <!-- PLANSEL TECHNOLOGY -->
+  <section class="sec tech" id="technology" aria-labelledby="tech-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Technology</span><span class="pm-n">07</span></p></div>
     <div class="wrap">
+      <div class="tech-intro">
+      <figure class="tech-hero">
+        <img src="img/technology-team.webp" alt="Team bespricht KI-Anwendungen vor großen Bildschirmen" loading="lazy">
+        <div class="ai-card" aria-hidden="true">
+          <p class="ai-status"><span class="ai-dot"></span><span class="ai-label">KI arbeitet gerade für ein Weingut</span></p>
+          <p class="ai-line" id="ai-line" data-dyn></p>
+          <div class="ai-bar"><span></span></div>
+        </div>
+        <span class="ai-scan" aria-hidden="true"></span>
+      </figure>
       <div class="sec-head">
-        <p class="eyebrow" data-i18n="guide.eyebrow">Plansel Guide · jede Woche neu</p>
-        <h2 id="guide-title" data-i18n="guide.title">Wo Wein gerade passiert.</h2>
-        <p class="lede" data-i18n="guide.lede">Messen, Verkostungen, Weingüter, Restaurants und Hotels. Kuratiert von unserem Team, sortiert mit KI, jeden Donnerstag aktualisiert.</p>
+        <p class="eyebrow">Plansel Technology</p>
+        <h2 id="tech-title">Wir bringen Weingüter ins KI-Zeitalter.</h2>
+        <p class="lede">KI verändert Verkauf, Marketing und Verwaltung schneller, als ein kleines Weingut nebenher folgen kann. Wir setzen die Werkzeuge von Anthropic, Google Gemini und OpenAI für Sie ein und zeigen Ihnen, wie sie funktionieren.</p>
+      <div class="tech-proof">
+        <p><b>Der Beweis steht vor Ihnen:</b> Diese Website nutzt selbst KI. Der Sommelier empfiehlt Weine, das Böhm-Archiv beantwortet Fachfragen, und alle Texte gibt es in sieben Sprachen.</p>
+        <a class="btn" href="mailto:info@plansel.com?subject=Plansel%20Technology">Beratung anfragen</a>
       </div>
-
-      <p class="masthead"><span>Ausgabe 47</span><span>Donnerstag, 19. November 2026</span></p>
-      <div class="tabs" role="tablist" aria-label="Guide" id="tabs" data-dyn></div>
-      <div class="guide-grid" id="guide-grid" data-dyn role="tabpanel"></div>
-      <p class="note">Entwurf: Messetermine sind vorläufig. Mit „Beispiel“ markierte Einträge sind Platzhalter für echte Partner.</p>
-
-      <div class="ad ad--wide" aria-label="Werbefläche">Anzeige · 970 × 250 Billboard · über symplr</div>
+        </div>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-col">
+          <h3>Individuelle KI-Schulungen</h3>
+          <p>Für Chefs und Team, auf Ihren Betrieb zugeschnitten: Wir arbeiten mit Ihren eigenen Weinen, Kunden und Abläufen. Auf Deutsch, Portugiesisch oder Englisch, auf der Quinta oder bei Ihnen.</p>
+          <ul class="tech-list">
+            <li>Prompts schreiben, die wirklich funktionieren</li>
+            <li>Eigene KI-Assistenten für Verkauf und Büro</li>
+            <li>Datenschutz und sichere Nutzung von KI</li>
+          </ul>
+        </div>
+        <div class="tech-col">
+          <h3>KI-Anwendungen für Ihr Weingut</h3>
+          <ul class="tech-list">
+            <li>KI-Sommelier, der jeden Shop-Kunden persönlich berät</li>
+            <li>Personalisierte E-Mails und Newsletter für jeden Kunden</li>
+            <li>KI-Agent beantwortet Gäste- und Buchungsanfragen rund um die Uhr</li>
+            <li>Weinbeschreibungen, Etiketten und Website automatisch in 7 Sprachen</li>
+            <li>Instagram-Posts und Reels aus Ihren Fotos, mit KI betextet</li>
+            <li>Verkaufs- und Lagerprognosen aus Ihren eigenen Daten</li>
+            <li>Rechnungen und Belege werden gelesen, geprüft und vorgebucht</li>
+          </ul>
+        </div>
+        <div class="tech-col">
+          <h3>Outsourcing</h3>
+          <p>Sie machen Wein, wir machen den Rest: Website mit Shop, Social Media, Buchhaltung. Ein Ansprechpartner, ein fester Monatspreis.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- NEWSLETTER -->
   <section class="sec letter" id="letter" aria-labelledby="letter-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Wine Letter</span><span class="pm-n">08</span></p></div>
     <div class="wrap">
       <div>
         <p class="eyebrow" data-i18n="letter.eyebrow">The Plansel Wine Letter · jeden Donnerstag</p>
@@ -407,7 +516,8 @@
   </section>
 
   <!-- PARTNER -->
-  <section class="sec" aria-labelledby="partner-title" style="padding-bottom:clamp(56px,8vw,96px)">
+  <section class="sec" id="netzwerk" aria-labelledby="partner-title" style="padding-bottom:clamp(56px,8vw,96px)">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Netzwerk</span><span class="pm-n">09</span></p></div>
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Netzwerk</p>
@@ -426,6 +536,48 @@
     </div>
   </section>
 
+  <!-- 10 FAMILIE: wie Plansel entstanden ist -->
+  <section class="sec family-sec" id="familie" aria-labelledby="fam-title">
+    <div class="wrap"><p class="page-mark"><img src="img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Familie</span><span class="pm-n">10</span></p></div>
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Die Familie Böhm-Lindemann</p>
+        <h2 id="fam-title">Eine Familie, die seit Generationen vom Wein lebt.</h2>
+        <p class="lede">Aus einer Panne auf See wurde ein Lebenswerk: Drei Generationen haben aus Reben, Forschung und Keller die Quinta da Plansel gemacht.</p>
+      </div>
+
+      <ul class="fam-people">
+        <li>
+          <img src="img/comendador-jorge-boehm.webp" alt="Comendador Jorge Böhm in seiner Bibliothek" loading="lazy" style="object-position: 22% 40%">
+          <b>Jorge Böhm</b><span>Gründer, Rebenzüchter, Comendador</span>
+        </li>
+        <li>
+          <img src="img/familie/dorina-lindemann.jpg" alt="Dorina mit einer Flasche Plansel im Barriquekeller" loading="lazy" style="object-position: 44% 30%">
+          <b>Dorina</b><span>Önologin und Herz des Weinguts</span>
+        </li>
+        <li>
+          <img src="img/familie/julia-lindemann.jpg" alt="Júlia vor einer bemalten Wand auf der Quinta" loading="lazy" style="object-position: 50% 30%">
+          <b>Júlia</b><span>Marketing, Social Media und Finanzen</span>
+        </li>
+        <li>
+          <img src="img/familie/luisa-lindemann.jpg" alt="Luísa mit einem Glas Rotwein auf Barriquefässern" loading="lazy" style="object-position: 52% 25%">
+          <b>Luísa</b><span>Önologie und internationaler Vertrieb</span>
+        </li>
+      </ul>
+
+      <ol class="timeline">
+        <li><b>18. Jh.</b><p>Die Familie Böhm handelt mit Wein und wird zu einem der wichtigsten Weinimporteure Deutschlands.</p></li>
+        <li><b>1961</b><p>Jorge Böhms Segelschiff strandet im Hafen von Cascais. Er bleibt, lernt das Land kennen und erkennt das Potenzial der Rebsorten im Alentejo.</p></li>
+        <li><b>1975</b><p>Er kauft die ersten Flächen bei Montemor-o-Novo. Daraus entsteht die Rebschule Viveiros Plansel.</p></li>
+        <li><b>1990er</b><p>Tochter Dorina, Önologin aus Geisenheim, kommt mit ihrem Mann Thomas Lindemann nach Portugal.</p></li>
+        <li><b>1993</b><p>Mit Paulo Laureano entsteht in der Versuchskellerei der Universität Évora der erste Wein. Sein Name: Plansel, kurz für „Plantas Seleccionadas“.</p></li>
+        <li><b>1998</b><p>Dorina und Thomas haben in fünf Jahren ihren eigenen Keller gebaut: die Quinta da Plansel.</p></li>
+        <li><b>Heute</b><p>Die Töchter Júlia und Luísa führen den Betrieb mit. Die Quinta erzeugt 400.000 Liter im Jahr, in fünf Weinlinien.</p></li>
+      </ol>
+      <p class="note">Quelle: Quinta da Plansel, „A história Lindemann-Böhm“ und „A nossa equipa“.</p>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-foot">
@@ -441,9 +593,11 @@
       <div><h4>Folgen</h4><ul><li><a href="https://www.instagram.com/quintaplansel/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/quinta.da.plansel/" target="_blank" rel="noopener">Facebook</a></li><li><a href="#letter">Wine Letter</a></li></ul></div>
     </div>
     <div class="base">
-      <span>© 2026 Plansel Group · Impressum · Datenschutz · Cookie-Einstellungen</span>
+      <span class="legal-links">© 2026 Plansel Group · <a href="ficha-tecnica.html">Ficha técnica / Impressum</a> · <a href="privacidade.html">Privacidade / Datenschutz</a> · <a href="privacidade.html#pt">Cookies</a></span>
+      <a class="lr" href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M5 3h11l3 3v15H5zM7 8h10v1.6H7zm0 3.5h10v1.6H7zm0 3.5h7v1.6H7z"/></svg><span>Livro de Reclamações</span></a>
       <span>Texte und Übersetzungen mit KI erstellt, von Menschen geprüft.</span>
     </div>
+    <p class="drink">Bitte verantwortungsvoll genießen. Kein Verkauf von Alkohol an Personen unter 18 Jahren.</p>
   </div>
 </footer>
 
