@@ -823,3 +823,11 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 .wb-text summary { cursor: pointer; font-size: .85rem; color: var(--gold-deep); }
 .wb-text p { max-width: 80ch; margin: 10px 0 0; font-size: .92rem; line-height: 1.6; color: var(--ink-2); }
 #p01 img { max-width: 520px; }
+.wb-fig { margin: clamp(18px, 3vw, 28px) 0; }
+.wb-fig img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: #fff; cursor: zoom-in; }
+.wb-fig figcaption { margin-top: 8px; font: italic .88rem/1.45 var(--f-display); color: var(--ink-2); text-align: center; }
+.wb-cover { display: grid; grid-template-columns: minmax(120px, 220px) 1fr; gap: clamp(18px, 3vw, 36px); align-items: start; margin-bottom: clamp(24px, 4vw, 40px); }
+.wb-cover img { width: 100%; height: auto; box-shadow: 0 6px 24px rgba(0,0,0,.15); cursor: zoom-in; }
+.wb-cover p + p { margin-top: 10px; }
+@media (max-width: 600px) { .wb-cover { grid-template-columns: 1fr; } .wb-cover img { max-width: 220px; } }
+.chronik-ch h2.wb-major { font-size: var(--step-3); margin-top: clamp(40px, 6vw, 72px); padding-top: clamp(20px, 3vw, 32px); border-top: 1px solid var(--line); }
