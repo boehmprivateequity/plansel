@@ -7,7 +7,7 @@
 /* Quellseite: sofort zur passenden Sprachseite /xx/index2.html. Mit ?quelle bleibt sie offen. */
 (function () {
   if (/[?&]quelle\b/.test(location.search)) return;
-  var L = ["pt", "en", "de", "fr", "es", "zh", "pl"], s = null, m = /[?&]l=([a-z]{2})/.exec(location.search);
+  var L = ["pt", "en", "de", "fr", "es", "zh", "pl", "it"], s = null, m = /[?&]l=([a-z]{2})/.exec(location.search);
   if (m && L.indexOf(m[1]) >= 0) s = m[1];
   if (!s) { try { s = localStorage.getItem("plansel-lang"); } catch (e) {} }
   if (L.indexOf(s) < 0) { var n = ((navigator.languages && navigator.languages[0]) || navigator.language || "pt").slice(0, 2).toLowerCase(); s = L.indexOf(n) >= 0 ? n : "pt"; }
@@ -24,6 +24,7 @@
 <link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html">
 <link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html">
 <link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html">
+<link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html">
 <meta property="og:title" content="Viveiros Plansel · Rebschule im Alentejo">
 <meta property="og:image" content="https://www.plansel.com/img/viveiros/viticultura.jpg">
 <link rel="icon" href="img/plansel-wappen-kraeftig.svg" type="image/svg+xml">

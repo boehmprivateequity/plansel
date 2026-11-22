@@ -1,10 +1,10 @@
-/* Sprachumschalter: EN · DE · PT · FR · ES · 中文 · PL
+/* Sprachumschalter: EN · PT · DE · FR · ES · PL · IT · 中文
    Überschriften mit Schlüsseln (data-i18n) stehen hier, alle übrigen Texte in i18n-texts.js.
    Dynamische Teile (Sommelier, Archiv, Guide) übersetzt app.js über PLANSEL_I18N.tr(). */
 window.PLANSEL_I18N = (function () {
   const LANGS = [
-    ["en", "EN", "English"], ["de", "DE", "Deutsch"], ["pt", "PT", "Português"], ["fr", "FR", "Français"],
-    ["es", "ES", "Español"], ["zh", "中文", "中文"], ["pl", "PL", "Polski"]
+    ["en", "EN", "English"], ["pt", "PT", "Português"], ["de", "DE", "Deutsch"], ["fr", "FR", "Français"],
+    ["es", "ES", "Español"], ["pl", "PL", "Polski"], ["it", "IT", "Italiano"], ["zh", "中文", "中文"]
   ];
   const T = {
     en: {
@@ -25,6 +25,25 @@ window.PLANSEL_I18N = (function () {
       "letter.eyebrow": "The Plansel Wine Letter · every Thursday", "letter.title": "Five minutes that expand your wine knowledge.", "letter.text": "Free, in your language. With content from the Wine School and the Böhm Archive.", "letter.submit": "Subscribe for free",
       "partner.title": "Who we work with.", "wine.dorina": "The wine visionary", "wine.wa": "Message Dorina"
     },
+    it: {
+      "nav.wines": "Vini", "nav.exp": "Esperienze", "nav.academy": "Accademia", "nav.science": "Scienza", "nav.guide": "Guida", "cta.shop": "Shop",
+      "hero.eyebrow": "Alentejo · Portogallo · dal 1975",
+      "hero.title": "Vini dalle viti <em>su cui cresce il Portogallo.</em>",
+      "hero.text": "Una cantina su due in Portogallo pianta viti selezionate da Plansel. Noi facciamo vino con le migliori: grandi vini dell'Alentejo, con alle spalle 50 anni di ricerca.",
+      "hero.buy": "Scopri i vini", "hero.book": "Visita la tenuta",
+      "wine.eyebrow": "Quinta da Plansel · Vini", "wine.title": "Grande vino portoghese. Tracciabile fino alla vite.",
+      "wine.lede": "Dorina, enologa formata a Geisenheim, fa vino dalle viti del padre dal 1993. Per ogni bottiglia sappiamo da quale clone proviene.",
+      "wine.shop": "Vedi nello shop →", "somm.title": "Quale Plansel per oggi?",
+      "exp.title": "Esperienze top, a un'ora da Lisbona.", "exp.lede": "Degustazioni in cantina, wine & dine tra le vigne, soggiorni alla quinta e la Plansel Gin Experience.", "exp.cta": "Prenota un'esperienza",
+      "acad.title": "Finalmente capire il vino", "acad.lede": "Corsi WSET ufficiali secondo lo standard di Londra, tenuti dall'educatore WSET Wilmy Matton, dall'enologa Dorina Lindemann e da docenti ospiti. Tra vivaio, laboratorio e cantina.", "acad.cta": "Chiedi le date dei corsi",
+      "sci.eyebrow": "Plansel Science · L'Archivio Böhm", "sci.title": "La scienza dietro ogni bottiglia.",
+      "sci.lede": "Plansel sta per “Plantas Seleccionadas”. Dietro il nome c'è un programma di ricerca che collabora con le università e prepara i vitigni del Portogallo al clima di domani.",
+      "sci.caption": "Nominato Comendador dal Presidente della Repubblica Portoghese nel 2006",
+      "guide.eyebrow": "Plansel Guide · nuova ogni settimana", "guide.title": "Dove succede il vino adesso.", "guide.lede": "Fiere, degustazioni, cantine, ristoranti e hotel. Selezionati dal nostro team, ordinati con l'IA, aggiornati ogni giovedì.",
+      "letter.eyebrow": "The Plansel Wine Letter · ogni giovedì", "letter.title": "Cinque minuti che ampliano la tua conoscenza del vino.", "letter.text": "Gratis, nella tua lingua. Con contenuti della Wine School e dell'Archivio Böhm.", "letter.submit": "Iscriviti gratis",
+      "partner.title": "Con chi lavoriamo.", "wine.dorina": "La visionaria del vino", "wine.wa": "Scrivi a Dorina"
+    },
+
     pt: {
       "nav.wines": "Vinhos", "nav.exp": "Experiências", "nav.academy": "Academia", "nav.science": "Ciência", "nav.guide": "Guia", "cta.shop": "Loja",
       "hero.eyebrow": "Alentejo · Portugal · desde 1975",
@@ -123,7 +142,7 @@ window.PLANSEL_I18N = (function () {
   document.querySelectorAll("[data-i18n-html]").forEach(el => { DE[el.dataset.i18nHtml] = el.innerHTML; });
 
   // Alle übrigen Texte: Wörterbuch mit dem deutschen Text als Schlüssel (i18n-texts.js)
-  const COLS = ["de", "en", "pt", "fr", "es", "zh", "pl"];
+  const COLS = ["de", "en", "pt", "fr", "es", "zh", "pl", "it"];
   const norm = s => s.replace(/\s+/g, " ").trim();
   const TX = {};
   COLS.forEach(c => { TX[c] = {}; });

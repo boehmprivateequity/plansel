@@ -7,7 +7,7 @@
 /* Quellseite: sofort zur passenden Sprachseite /xx/index3.html. Mit ?quelle bleibt sie offen. */
 (function () {
   if (/[?&]quelle\b/.test(location.search)) return;
-  var L = ["pt", "en", "de", "fr", "es", "zh", "pl"], s = null;
+  var L = ["pt", "en", "de", "fr", "es", "zh", "pl", "it"], s = null;
   try { s = localStorage.getItem("plansel-lang"); } catch (e) {}
   if (L.indexOf(s) < 0) { var n = ((navigator.languages && navigator.languages[0]) || navigator.language || "pt").slice(0, 2).toLowerCase(); s = L.indexOf(n) >= 0 ? n : "pt"; }
   location.replace(s + "/index3.html" + location.hash);
@@ -23,6 +23,7 @@
 <link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html">
 <link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html">
 <link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html">
+<link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html">
 <meta property="og:title" content="Familie Böhm · Plansel">
 <meta property="og:description" content="Familie Böhm: die Stammtafel seit Wachenheim, Comendador Hans Jörg (Jorge) Böhm und Dorina Lindemann, mit Büchern, Videos und Kontakt.">
 <meta property="og:image" content="https://www.plansel.com/img/comendador-jorge-boehm.webp">

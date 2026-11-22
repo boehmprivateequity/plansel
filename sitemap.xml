@@ -6,8 +6,9 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
   </url>
   <url><loc>https://www.plansel.com/en/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
@@ -16,8 +17,9 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
   </url>
   <url><loc>https://www.plansel.com/de/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
@@ -26,8 +28,9 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
   </url>
   <url><loc>https://www.plansel.com/fr/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
@@ -36,8 +39,9 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
   </url>
   <url><loc>https://www.plansel.com/es/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
@@ -46,8 +50,31 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
+  </url>
+  <url><loc>https://www.plansel.com/pl/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
+  </url>
+  <url><loc>https://www.plansel.com/it/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
   </url>
   <url><loc>https://www.plansel.com/zh/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
@@ -56,30 +83,21 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
   </url>
-  <url><loc>https://www.plansel.com/pl/</loc><changefreq>weekly</changefreq><priority>0.8</priority>
-  <url><loc>https://www.plansel.com/privacidade.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-ang="en" href="https://www.plansel.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/"/>
-  </url>
-  <url><loc>https://www.plansel.com/ficha-tecnica.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-
   <url><loc>https://www.plansel.com/pt/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
   </url>
   <url><loc>https://www.plansel.com/en/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
@@ -87,8 +105,10 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
   </url>
   <url><loc>https://www.plansel.com/de/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
@@ -96,34 +116,32 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
   </url>
   <url><loc>https://www.plansel.com/fr/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
+  </url>
   <url><loc>https://www.plansel.com/es/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
-="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
-  </url>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
-  </url>
-  <url><loc>https://www.plansel.com/zh/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
   </url>
   <url><loc>https://www.plansel.com/pl/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
@@ -131,8 +149,32 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
+  </url>
+  <url><loc>https://www.plansel.com/it/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
+  </url>
+  <url><loc>https://www.plansel.com/zh/index2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index2.html"/>
   </url>
   <url><loc>https://www.plansel.com/pt/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
@@ -140,8 +182,10 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
   </url>
   <url><loc>https://www.plansel.com/en/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
@@ -149,8 +193,10 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
   </url>
   <url><loc>https://www.plansel.com/de/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
@@ -158,8 +204,10 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
   </url>
   <url><loc>https://www.plansel.com/fr/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
@@ -167,8 +215,10 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
   </url>
   <url><loc>https://www.plansel.com/es/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
@@ -176,17 +226,10 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
-  </url>
-  <url><loc>https://www.plansel.com/zh/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
   </url>
   <url><loc>https://www.plansel.com/pl/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
@@ -194,9 +237,35 @@ ang="en" href="https://www.plansel.com/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
   </url>
+  <url><loc>https://www.plansel.com/it/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
+  </url>
+  <url><loc>https://www.plansel.com/zh/index3.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.plansel.com/pt/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plansel.com/en/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.plansel.com/de/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.plansel.com/fr/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.plansel.com/es/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.plansel.com/pl/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.plansel.com/it/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.plansel.com/zh/index3.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plansel.com/index3.html"/>
+  </url>
+  <url><loc>https://www.plansel.com/privacidade.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://www.plansel.com/ficha-tecnica.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://www.plansel.com/chronik/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.plansel.com/chronik/vorwort.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.plansel.com/chronik/umfeld.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -210,9 +279,9 @@ ang="en" href="https://www.plansel.com/en/"/>
   <url><loc>https://www.plansel.com/chronik/rueckblick.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.plansel.com/chronik/helene.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.plansel.com/weinbuch/index.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.plansel.com/weinbuch/history.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.plansel.com/weinbuch/terroir.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.plansel.com/weinbuch/grapes.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.plansel.com/weinbuch/regions.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.plansel.com/weinbuch/food.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/grapes.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/history.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/regions.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/terroir.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
 </urlset>

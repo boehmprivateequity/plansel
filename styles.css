@@ -831,3 +831,9 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 .wb-cover p + p { margin-top: 10px; }
 @media (max-width: 600px) { .wb-cover { grid-template-columns: 1fr; } .wb-cover img { max-width: 220px; } }
 .chronik-ch h2.wb-major { font-size: var(--step-3); margin-top: clamp(40px, 6vw, 72px); padding-top: clamp(20px, 3vw, 32px); border-top: 1px solid var(--line); }
+
+/* Sprachschalter etwas heller */
+.lang { background: #4A4D43; border-color: #5C6054; }
+.lang button { color: #E4E1D6; }
+.lang button:hover { color: #fff; background: rgba(255,255,255,.08); }
+.lang button[aria-pressed="true"] { background: var(--gold-deep); color: #fff; }
