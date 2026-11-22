@@ -644,8 +644,9 @@ form.signup legend.eyebrow::before { display: none; }
 @media (max-width: 560px) { .offers a { grid-template-columns: 2.2em minmax(0, 1fr) 38px; } .offers .ic { width: 38px; height: 38px; } }
 
 /* ===== Einheitlich hell: Weiß und Gelbton im Wechsel, kein Schwarz mehr ===== */
-#angebot, .facts, #mundus-vini, #akademie, #technology, #netzwerk { background: var(--paper-2); }
-#events, #weine, #erlebnisse, #wissenschaft, #letter, #familie { background: var(--paper); }
+#angebot, #weine, #erlebnisse, #wissenschaft, #letter, #familie { background: var(--paper-2); }
+#events, #mundus-vini, #akademie, #technology, #netzwerk { background: var(--paper); }
+#angebot .facts { background: transparent; border-top: 1px solid var(--line); margin-top: clamp(18px, 2.5vw, 28px); }
 .science, .letter {
   --on-night: var(--ink); --on-night-2: var(--ink-2); --rule-night: var(--line);
   color: var(--ink);
