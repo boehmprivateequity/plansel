@@ -209,4 +209,10 @@ ang="en" href="https://www.plansel.com/en/"/>
   <url><loc>https://www.plansel.com/chronik/georg.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.plansel.com/chronik/rueckblick.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.plansel.com/chronik/helene.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/index.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/history.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/terroir.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/grapes.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/regions.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.plansel.com/weinbuch/food.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
 </urlset>

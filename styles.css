@@ -802,8 +802,24 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 .fam3-facts li > a { display: grid; gap: 6px; align-content: start; color: inherit; text-decoration: none; }
 .fam3-facts li > a b { text-align: center; }
 .fam3-facts li > a:hover b { color: var(--gold-deep); }
-#kontakt { background: var(--paper); }
-#dorina { background: var(--paper-2); }
-#luisa { background: var(--paper); }
-#julia { background: var(--paper-2); }
-#buecher { background: var(--paper); }
+#dorina { background: var(--paper); }
+#luisa { background: var(--paper-2); }
+#julia { background: var(--paper); }
+#buecher { background: var(--paper-2); }
+
+/* Weinbuch online */
+.wb-intro { max-width: 72ch; margin-bottom: clamp(20px, 3vw, 36px); }
+.wb-intro .hjb-lede + .hjb-lede { margin-top: 12px; }
+.wb-toc { list-style: none; margin: 0 0 clamp(32px, 5vw, 56px); padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.wb-toc a { display: grid; gap: 4px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: inherit; text-decoration: none; height: 100%; }
+.wb-toc a:hover { border-color: var(--gold-deep); }
+.wb-toc .n { font: italic .9rem/1 var(--f-display); color: var(--gold-deep); }
+.wb-toc b { font: 400 var(--step-1)/1.25 var(--f-display); }
+.wb-toc small { color: var(--ink-2); }
+.wb-page { margin: 0 0 clamp(28px, 4vw, 48px); }
+.wb-page img { display: block; width: 100%; height: auto; background: #fff; box-shadow: 0 6px 24px rgba(0,0,0,.12); cursor: zoom-in; }
+.wb-page figcaption { margin-top: 8px; font-size: .8rem; color: var(--ink-2); }
+.wb-text { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+.wb-text summary { cursor: pointer; font-size: .85rem; color: var(--gold-deep); }
+.wb-text p { max-width: 80ch; margin: 10px 0 0; font-size: .92rem; line-height: 1.6; color: var(--ink-2); }
+#p01 img { max-width: 520px; }
