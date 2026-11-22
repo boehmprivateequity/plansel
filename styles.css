@@ -840,3 +840,11 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 .fam3-jump .jn { font: italic 400 .95rem/1 var(--f-display); color: var(--gold-deep); margin-right: .6em; }
 .fam3-jump .jy { color: var(--ink-2); font-weight: 400; margin-left: .45em; }
 .fam3-jump .jn, .fam3-jump .jy { display: inline-block; text-decoration: none; }
+
+/* Fakten-Leiste kompakt im Bereich Familie */
+#familie .facts { background: transparent; border-top: 1px solid var(--line); margin-top: clamp(24px, 3vw, 36px); }
+#familie .facts li { padding: 16px 14px 14px 0; gap: 4px; }
+#familie .facts li + li { padding-left: 14px; }
+#familie .facts b { font-size: var(--step-1); }
+#familie .facts small { font-size: .78rem; }
+#familie .facts .src { font-size: .74rem; padding-block: 0 10px; }
