@@ -802,3 +802,8 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 .fam3-facts li > a { display: grid; gap: 6px; align-content: start; color: inherit; text-decoration: none; }
 .fam3-facts li > a b { text-align: center; }
 .fam3-facts li > a:hover b { color: var(--gold-deep); }
+#kontakt { background: var(--paper); }
+#dorina { background: var(--paper-2); }
+#luisa { background: var(--paper); }
+#julia { background: var(--paper-2); }
+#buecher { background: var(--paper); }
