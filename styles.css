@@ -795,3 +795,4 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 .svc-card .btn { align-self: flex-start; }
 @media (max-width: 820px) { .svc-cards { grid-template-columns: 1fr; } .svc-grid { grid-template-columns: 1fr; } .svc-ic { display: none; } }
 .fam3-facts { background: var(--paper-2); border-top: 1px solid var(--line); }
+@media (min-width: 901px) { .fam3-facts ul { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
