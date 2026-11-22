@@ -608,7 +608,7 @@ form.signup legend.eyebrow::before { display: none; }
 /* Mundus Vini: Qualitätssiegel unter den Events */
 .mv { background: var(--paper-2); color: var(--ink); border-block: 1px solid var(--line); padding-block: clamp(36px, 4.5vw, 56px); }
 .mv-grid { max-width: 1040px; display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: clamp(24px, 4vw, 52px); align-items: center; }
-.mv-pic { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 14px 14px 8px; }
+.mv-pic { margin: 0; }
 .mv-pic img { display: block; width: 100%; height: auto; }
 .mv-pic figcaption { color: var(--ink-2); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; text-align: center; padding-top: 6px; }
 .mv .eyebrow { color: var(--gold-deep); }
@@ -779,3 +779,5 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 .chronik-foot p { margin: 0 0 8px; font-size: .85rem; }
 .chronik-foot a { color: inherit; }
 @media (max-width: 640px) { .ch-intro { grid-template-columns: 120px minmax(0, 1fr); } .ch-toc a { grid-template-columns: 2.2em minmax(0, 1fr); } .ch-toc small { display: none; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
