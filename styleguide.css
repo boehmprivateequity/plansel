@@ -133,14 +133,8 @@ html { scroll-padding-top: 96px; }
 @media (max-width: 560px) { .sg-grp, .sg-var { grid-template-columns: 1fr; } .sg-grp .lk, .sg-var .lk { font-size: 1.25rem; } .sg-headlabel { display: none; } .sg-page .head-cta { display: inline-flex; margin-left: auto; } .sg-soc { grid-template-columns: 1fr; } .sg-post--st { max-width: 250px; } .sg-scroll { display: none; } .sg-clear .lk { font-size: 1.25rem; } }
 @media (prefers-reduced-motion: reduce) { .js .sg-in > *, .js .sg-sheet .sg-corner { opacity: 1; transform: none; transition: none; } .js .sg-cover .lk, .js .sg-cover-t, .sg-scroll::after { animation: none; } }
 
-/* Druck: jede Tafel eine Seite A4 quer, wie das gedruckte Handbuch */
-@media print {
-  @page { size: A4 landscape; margin: 0; }
-  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .site-head, .sg-nav, .sg-progress, .sg-foot, .sg-toast, .sg-scroll, .sg-filter, .sg-range, #sg-print { display: none !important; }
-  .sg-page, .sg { background: #fff; } .sg { display: block; max-width: none; padding: 0; } .sg-sheet, .sg-cover { break-after: page; min-height: 100vh; padding-block: 26mm 18mm; } .sg-cover { padding: 0; }
-  .js .sg-in > *, .js .sg-sheet .sg-corner { opacity: 1 !important; transform: none !important; }
-  figure, .sg-item { break-inside: avoid; }
-}
+
+/* Druck: alles sichtbar. Das fertige PDF liegt in marke/plansel-styleguide.pdf */
+@media print { .site-head, .sg-nav, .sg-progress, .sg-toast, .sg-scroll { display: none !important; } .js .sg-in > *, .js .sg-sheet .sg-corner { opacity: 1 !important; transform: none !important; } figure, .sg-item { break-inside: avoid; } }
 .sg-item .pv { position: relative; }
 #sg-logos .pv img { position: absolute; inset: 12%; width: 76%; height: 76%; max-width: none; max-height: none; object-fit: contain; }

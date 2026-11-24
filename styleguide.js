@@ -26,9 +26,8 @@
     $$("#sg-photos .sg-item").forEach(x => { x.hidden = b.dataset.f !== "alle" && x.dataset.g !== b.dataset.f; });
   }));
   $$("[data-size]").forEach(async el => {
-    try { const r = await fetch(el.dataset.size, { method: "HEAD" }); const n = +r.headers.get("content-length"); if (r.ok && n) el.textContent = "ZIP · " + (n / 1048576).toFixed(1).replace(".", ",") + " MB"; } catch (e) {}
+    try { const r = await fetch(el.dataset.size, { method: "HEAD" }); const n = +r.headers.get("content-length"); if (r.ok && n) el.textContent = el.textContent + " · " + (n / 1048576).toFixed(1).replace(".", ",") + " MB"; } catch (e) {}
   });
-  $("#sg-print").addEventListener("click", () => print());
   addEventListener("beforeprint", () => { $$(".sg-sheet").forEach(s => s.classList.add("in")); $$("img[loading=lazy]").forEach(i => { i.loading = "eager"; }); });
 
   /* Farbwert kopieren */

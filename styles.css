@@ -960,3 +960,6 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
   .lang .lang-menu button[data-lang="zh"] .lc { font-size: .95rem; opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .lang-menu, .lang-chev { transition: none !important; } }
+/* Bücher und Chronik auf schmalen Handys: lange Titel trennen, Cover über den Text */
+.chronik-page h1, .chronik-page h2 { overflow-wrap: anywhere; hyphens: auto; }
+@media (max-width: 440px) { .ch-intro { grid-template-columns: 1fr; } .ch-intro img { max-width: 150px; } }
