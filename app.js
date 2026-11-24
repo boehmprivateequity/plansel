@@ -58,9 +58,9 @@
 
   /* ---------- KI-Sommelier ---------- */
   const WINES = {
-    tinto: { name: "Plansel Tinta Barroca", img: "img/garrafa-tinto.png", type: "Tinto" },
-    branco: { name: "Plansel Branco", img: "img/garrafa-branco.png", type: "Branco" },
-    rose: { name: "Plansel Rosé", img: "img/garrafa-rose.png", type: "Rosé" }
+    tinto: { name: "Plansel Tinta Barroca", img: "img/garrafa-tinto.webp", type: "Tinto" },
+    branco: { name: "Plansel Branco", img: "img/garrafa-branco.webp", type: "Branco" },
+    rose: { name: "Plansel Rosé", img: "img/garrafa-rose.webp", type: "Rosé" }
   };
   function recommend(o, f, s) {
     if (f === "meat" || (s === "full" && f !== "fish")) return ["tinto", "Tinta Barroca bringt dunkle Frucht und weiche Tannine. Das trägt Fleisch und kräftige Saucen.", f === "meat" ? "Kräftig + Fleisch → Rotwein mit Struktur" : "Kräftig + Anlass → Rotwein mit Struktur"];
@@ -261,4 +261,51 @@
     renderCookie();
   });
 
+})();
+
+/* Sanftes Einblenden von Elementen mit Klasse .rv */
+(function () {
+  const els = document.querySelectorAll(".rv");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) { els.forEach(e => e.classList.add("in")); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(e => io.observe(e));
+})();
+
+/* Einstieg im Apple-Stil: Scrollfortschritt als CSS-Variable --p (0 bis 1) */
+(function () {
+  const sec = document.querySelector(".ah");
+  if (!sec || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let ticking = false;
+  const update = () => {
+    const r = sec.getBoundingClientRect(), span = sec.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, -r.top / (span || 1)));
+    sec.style.setProperty("--p", p.toFixed(4)); const hd = document.querySelector(".site-head"); if (hd) sec.style.setProperty("--hh", hd.offsetHeight + "px"); ticking = false;
+  };
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener("resize", update); update();
+})();
+
+/* Zahlen zählen beim Hinscrollen hoch (Jahreszahlen bleiben stehen) */
+(function () {
+  const els = [...document.querySelectorAll(".facts .tnum")];
+  if (!els.length || !("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const run = el => {
+    const txt = el.textContent, m = txt.match(/\d[\d.,\s]*/);
+    if (!m) return;
+    const raw = m[0].trim(), digits = raw.replace(/[^\d]/g, ""), n = parseInt(digits, 10);
+    if (!n || (digits.length === 4 && n >= 1900 && n <= 2100)) return;
+    const sep = (raw.match(/[.,\s](?=\d{3}\b)/) || [""])[0];
+    const fmt = v => sep ? String(v).replace(/\B(?=(\d{3})+(?!\d))/g, sep) : String(v);
+    const pre = txt.slice(0, m.index), post = txt.slice(m.index + m[0].length) || (m[0].endsWith(" ") ? " " : "");
+    const t0 = performance.now(), dur = 1600;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = k < 1 ? pre + fmt(Math.round(n * e)) + (m[0].endsWith(" ") ? " " : "") + post.trimStart() : txt;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }), { threshold: .6 });
+  els.forEach(e => io.observe(e));
 })();

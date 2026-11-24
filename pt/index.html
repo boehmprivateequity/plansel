@@ -114,6 +114,21 @@
 
 <main id="top">
 
+  <!-- START: Einstieg im Apple-Stil (Muster) -->
+  <section class="ah" id="start" aria-labelledby="ah-title">
+    <div class="ah-stage">
+      <div class="ah-head">
+        <p class="ah-kicker">Quinta da Plansel · Alentejo</p>
+        <h2 id="ah-title" class="ah-title">Vinho. Videiras. Saber.</h2>
+        <p class="ah-sub">Há 50 anos nas mãos da família, da videira ao copo.</p>
+      </div>
+      <figure class="ah-frame">
+        <img src="../img/gruppen/start.webp" alt="Vista aérea da Quinta da Plansel com vinhas perto de Montemor-o-Novo" width="1600" height="1066" fetchpriority="high">
+        <figcaption class="ah-cap"><span>Montemor-o-Novo, Portugal</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- 01 ANGEBOT: was man über Plansel bekommt -->
   <section class="sec offer" id="angebot" aria-labelledby="offer-title">
     <div class="wrap"><p class="page-mark"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"><span class="pm-label">Os nossos produtos</span></p></div>
@@ -209,20 +224,20 @@
         </div>
       </div>
       <div class="wines-grid">
-        <article class="wine">
-          <div class="shot"><img src="../img/garrafa-tinto.png" alt="Garrafa Plansel Tinta Barroca" loading="lazy"></div>
+        <article class="wine wine--tinto rv">
+          <div class="shot"><img src="../img/garrafa-tinto.webp" alt="Garrafa Plansel Tinta Barroca" loading="lazy"></div>
           <p class="meta">Tinto · Alentejo</p>
           <h3>Plansel Tinta Barroca</h3>
           <a href="https://loja.plansel.com/collections" target="_blank" rel="noopener" data-i18n="wine.shop">Ver na loja →</a>
         </article>
-        <article class="wine">
-          <div class="shot"><img src="../img/garrafa-branco.png" alt="Garrafa Plansel Branco" loading="lazy"></div>
+        <article class="wine wine--branco rv">
+          <div class="shot"><img src="../img/garrafa-branco.webp" alt="Garrafa Plansel Branco" loading="lazy"></div>
           <p class="meta">Branco · Alentejo</p>
           <h3>Plansel Branco</h3>
           <a href="https://loja.plansel.com/collections" target="_blank" rel="noopener" data-i18n="wine.shop">Ver na loja →</a>
         </article>
-        <article class="wine">
-          <div class="shot"><img src="../img/garrafa-rose.png" alt="Garrafa Plansel Rosé" loading="lazy"></div>
+        <article class="wine wine--rose rv">
+          <div class="shot"><img src="../img/garrafa-rose.webp" alt="Garrafa Plansel Rosé" loading="lazy"></div>
           <p class="meta">Rosé · Alentejo</p>
           <h3>Plansel Rosé</h3>
           <a href="https://loja.plansel.com/collections" target="_blank" rel="noopener" data-i18n="wine.shop">Ver na loja →</a>
@@ -260,7 +275,7 @@
             </div>
           </fieldset>
         </form>
-        <div class="somm-out" id="somm-out" data-dyn="" aria-live="polite"><img src="../img/garrafa-tinto.png" alt="Garrafa Plansel Tinta Barroca"><div><span class="badge-ai">Recomendação IA</span><h3>Plansel Tinta Barroca</h3><p>A Tinta Barroca traz fruta escura e taninos macios. Acompanha bem carne e molhos intensos.</p><p class="why">Porquê: Encorpado + carne → tinto estruturado</p><a class="btn" href="https://loja.plansel.com/collections" target="_blank" rel="noopener" style="margin-top: 18px;">Encomendar na loja</a></div></div>
+        <div class="somm-out" id="somm-out" data-dyn="" aria-live="polite"><img src="../img/garrafa-tinto.webp" alt="Garrafa Plansel Tinta Barroca"><div><span class="badge-ai">Recomendação IA</span><h3>Plansel Tinta Barroca</h3><p>A Tinta Barroca traz fruta escura e taninos macios. Acompanha bem carne e molhos intensos.</p><p class="why">Porquê: Encorpado + carne → tinto estruturado</p><a class="btn" href="https://loja.plansel.com/collections" target="_blank" rel="noopener" style="margin-top: 18px;">Encomendar na loja</a></div></div>
       </div>
     </div>
   </section>
@@ -308,17 +323,28 @@
         <p class="lede">Diretamente da nossa loja online, através dos nossos parceiros na Alemanha e na Suíça, ou no copo: em provas, roadshows e feiras.</p>
       </div>
 
+      <h3 class="pn-h">Para quem trabalhamos</h3>
+      <ul class="pn-list pn-groups">
+        <li class="rv"><a class="pn-tile" href="mailto:info@plansel.com?subject=Plansel%20f%C3%BCr%20Gastronomie"><span class="pn-timg"><img src="../img/gruppen/gastronomie.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8a2 2 0 0 0 2 2v8M5 3v5M9 3v5M17 3c-2 2-2 6 0 8v10"></path></svg>01</span><b>Restauração</b><small>Restaurantes, wine bars, bares de hotel, beach clubs e catering</small><span class="pn-go">Pedir informações</span></span></a></li>
+        <li class="rv"><a class="pn-tile" href="mailto:info@plansel.com?subject=Plansel%20f%C3%BCr%20Hotels"><span class="pn-timg"><img src="../img/gruppen/hotels.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3M7 11.5a1.5 1.5 0 1 0 0-.01"></path></svg>02</span><b>Hotéis</b><small>Carta de vinhos, bar, presente de boas-vindas e loja do hotel</small><span class="pn-go">Pedir informações</span></span></a></li>
+        <li class="rv"><a class="pn-tile" href="mailto:info@plansel.com?subject=Plansel%20f%C3%BCr%20Weinhandel"><span class="pn-timg"><img src="../img/gruppen/weinhandel.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9l1.5-5h13L20 9M4 9h16v11H4zM4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M10 20v-5h4v5"></path></svg>03</span><b>Comércio de vinho</b><small>Vinotecas, garrafeiras, mercearias finas, lojas online e duty-free</small><span class="pn-go">Pedir informações</span></span></a></li>
+        <li class="rv"><a class="pn-tile" href="mailto:info@plansel.com?subject=Plansel%20f%C3%BCr%20Gro%C3%9Fhandel%20und%20Export"><span class="pn-timg"><img src="../img/gruppen/grosshandel.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l2 4h14l2-4M5 17V9h14v8M9 9V5h6v4M12 5V2"></path></svg>04</span><b>Grossistas e exportação</b><small>Distribuidores, armazéns para a restauração, importadores e marcas próprias</small><span class="pn-go">Pedir informações</span></span></a></li>
+        <li class="rv"><a class="pn-tile" href="mailto:info@plansel.com?subject=Plansel%20f%C3%BCr%20Weintourismus"><span class="pn-timg"><img src="../img/gruppen/tourismus.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>05</span><b>Enoturismo</b><small>Operadores turísticos, passeios no Alentejo e excursões de cruzeiros</small><span class="pn-go">Pedir informações</span></span></a></li>
+        <li class="rv"><a class="pn-tile" href="mailto:info@plansel.com?subject=Plansel%20f%C3%BCr%20Firmengeschenke"><span class="pn-timg"><img src="../img/gruppen/geschenke.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v10H4zM3 7h18v4H3zM12 7v14M12 7c-1-3-5-4-5-1.5S12 7 12 7zM12 7c1-3 5-4 5-1.5S12 7 12 7z"></path></svg>06</span><b>Empresas e presentes</b><small>Presentes para clientes, receções e garrafas com rótulo próprio</small><span class="pn-go">Pedir informações</span></span></a></li>
+        <li class="rv"><a class="pn-tile" href="mailto:info@plansel.com?subject=Plansel%20f%C3%BCr%20Hochzeiten%20und%20Events"><span class="pn-timg"><img src="../img/gruppen/events.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l-.5 5a1.5 1.5 0 0 1-3 0zM8 9.5V20M6 20h4M14 3h4l.5 5a1.5 1.5 0 0 1-3 0zM16 9.5V20M14 20h4"></path></svg>07</span><b>Casamentos e eventos</b><small>Noivos, organizadores, quintas, feiras e festivais</small><span class="pn-go">Pedir informações</span></span></a></li>
+        <li class="rv"><a class="pn-tile" href="https://loja.plansel.com/" target="_blank" rel="noopener"><span class="pn-timg"><img src="../img/gruppen/privat.webp" alt="" width="640" height="800" loading="lazy"></span><span class="pn-ov"><span class="pn-where"><svg class="pn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"></path></svg>08</span><b>Clientes particulares</b><small>Na loja e online, do pack de prova à garrafa magnum</small><span class="pn-go">Ir para a loja</span></span></a></li>
+      </ul>
+
+
       <h3 class="pn-h">Loja online: para clientes empresariais e particulares</h3>
-      <div class="svc-cards pn-two">
-        <div class="svc-card">
-          <p class="pn-tag">B2B</p>
-          <h3>Para revendedores, restauração e grandes compradores</h3>
+      <div class="pn-duo">
+        <div class="pn-panel rv">
+          <div class="pn-pimg"><img src="../img/gruppen/b2b.webp" alt="" width="960" height="600" loading="lazy"><p class="pn-tag">B2B</p><h3>Para revendedores, restauração e grandes compradores</h3></div>
           <p>Encomende 24 horas por dia através do acesso B2B na loja Plansel, aos seus preços previamente acordados. Logo após a encomenda recebe a confirmação por e-mail e pode verificar novamente quantidades, preços e produtos. A sua encomenda entra de imediato no nosso sistema de gestão.</p>
           <p class="pn-btns"><a class="btn" href="https://loja.plansel.com/account/login" target="_blank" rel="noopener">Abrir loja B2B</a> <a class="btn btn--ghost" href="mailto:info@plansel.com?subject=B2B-Zugang%20Plansel">Pedir acesso B2B</a></p>
         </div>
-        <div class="svc-card">
-          <p class="pn-tag">B2C</p>
-          <h3>Para particulares</h3>
+        <div class="pn-panel rv">
+          <div class="pn-pimg"><img src="../img/gruppen/b2c.webp" alt="" width="960" height="600" loading="lazy"><p class="pn-tag">B2C</p><h3>Para particulares</h3></div>
           <p>Escolha os seus vinhos na loja e receba-os comodamente em casa, diretamente da quinta no Alentejo.</p>
           <p class="pn-btns"><a class="btn" href="https://loja.plansel.com/" target="_blank" rel="noopener">Ir para a loja</a></p>
         </div>
@@ -388,8 +414,8 @@
         <p class="lede" data-i18n="exp.lede">Provas na adega, Wine &amp; Dine entre as vinhas, alojamento na Quinta e a Plansel Gin Experience.</p>
       </div>
       <div class="band">
-        <figure class="tall"><img src="../img/wine-dine.jpg" alt="Mesa posta para o Wine &amp; Dine na Quinta da Plansel" loading="lazy"><figcaption><b>Wine &amp; Dine</b><span>Menu com vinhos harmonizados</span></figcaption></figure>
-        <figure><img src="../img/quinta-casa.jpg" alt="Casa branca da Quinta da Plansel entre as vinhas" loading="lazy"><figcaption><b>Alojamento</b><span>Na Quinta</span></figcaption></figure>
+        <figure class="tall"><img src="../img/wine-dine.webp" alt="Mesa posta para o Wine &amp; Dine na Quinta da Plansel" loading="lazy"><figcaption><b>Wine &amp; Dine</b><span>Menu com vinhos harmonizados</span></figcaption></figure>
+        <figure><img src="../img/quinta-casa.webp" alt="Casa branca da Quinta da Plansel entre as vinhas" loading="lazy"><figcaption><b>Alojamento</b><span>Na Quinta</span></figcaption></figure>
         <figure><img src="../img/vindima.jpg" alt="Mãos com uvas acabadas de colher sobre uma cuba" loading="lazy"><figcaption><b>Vindima</b><span>Setembro</span></figcaption></figure>
       </div>
       <p style="margin-top:28px"><a class="btn" href="mailto:info@plansel.com?subject=%C3%9Cbernachten%20und%20Feiern%20auf%20der%20Quinta">Pedir alojamento ou festa</a></p>
