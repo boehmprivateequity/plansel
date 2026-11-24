@@ -6,14 +6,12 @@ export async function mount(host) {
   let D; try { D = await load(); } catch (e) { host.hidden = true; return; }
   const CT = counters(D), o = D.oiv, li = o.years.length - 1, p = D.blocks.ipma, h = p && p.hours.at(-1);
   let C, t, timer;
-  const line = () => { const a = o.prod.World, lo = Math.min(...a), hi = Math.max(...a); return a.map((v, i) => (i ? "L" : "M") + (4 + i * 112 / (a.length - 1)).toFixed(1) + " " + (40 - (v - lo) / (hi - lo) * 32).toFixed(1)).join(""); };
   const ch = v => `<i class="${v >= 0 ? "u" : "d"}">${v >= 0 ? "▲" : "▼"} ${C.pct(v)}</i>`;
   function draw() {
     C = ctx(lang()); t = C.t;
     host.innerHTML = `<button type="button" class="gwm-b" aria-haspopup="dialog" aria-label="PLANSEL Global Wine Monitor: ${t("open")}">
       <span class="gwm-h"><b>Global Wine Monitor</b><small>${t("claim")}</small></span>
-      <span class="gwm-k"><span><small>${t("pop")}</small><b data-c="pop"></b></span><span><small>${t("wprod")}</small><b>${C.n(o.prod.World[li] * HL / 1e3, 1)} ${t("bn")}</b>${ch(o.world.prodChg)}</span><span><small>${t("wcons")}</small><b>${C.n(o.cons.World[li] * HL / 1e3, 1)} ${t("bn")}</b>${ch(o.world.consChg)}</span></span>
-      <span class="gwm-r"><span class="gwm-l"><small>${t("wprod")}</small><svg viewBox="0 0 120 46" aria-hidden="true"><path d="${line()}" fill="none" stroke="#6f1130" stroke-width="2"/></svg></span><span class="gwm-c"><small>${t("cbot")} · ${t("today")}</small><b data-c="cbot"></b><em>ESTIMATE</em></span>${h ? `<span class="gwm-w"><small>Montemor-o-Novo</small><b>${C.n(h[1], 1)} °C</b>${D.status.ipma.state === "ok" ? "<em>LIVE</em>" : ""}</span>` : ""}</span>
+      <span class="gwm-k"><span><small>${t("pop")}</small><b data-c="pop"></b></span><span><small>${t("wprod")}</small><b>${C.n(o.prod.World[li] * HL / 1e3, 1)} ${t("bn")}</b>${ch(o.world.prodChg)}</span><span><small>${t("wcons")}</small><b>${C.n(o.cons.World[li] * HL / 1e3, 1)} ${t("bn")}</b>${ch(o.world.consChg)}</span>${h ? `<span class="gwm-w"><small>Montemor-o-Novo</small><b>${C.n(h[1], 1)} °C</b>${D.status.ipma.state === "ok" ? "<em>LIVE</em>" : ""}</span>` : ""}</span>
       <span class="gwm-o">${t("open")} ⤢</span></button>`;
     host.querySelector("button").onclick = open;
   }
