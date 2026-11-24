@@ -311,3 +311,11 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }), { threshold: .6 });
   els.forEach(e => io.observe(e));
 })();
+
+/* Global Wine Monitor: Vorschau erst laden, wenn sie in die Nähe kommt */
+(function () {
+  const g = document.getElementById("gwm"); if (!g) return;
+  const go = () => import(new URL((document.documentElement.dataset.staticLang ? "../" : "") + "monitor/preview.js", location.href).href).then(m => m.mount(g)).catch(() => { g.hidden = true; });
+  if (!("IntersectionObserver" in window)) return go();
+  const io = new IntersectionObserver(e => { if (e[0].isIntersecting) { io.disconnect(); go(); } }, { rootMargin: "500px" }); io.observe(g);
+})();

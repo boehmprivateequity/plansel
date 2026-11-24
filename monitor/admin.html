@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Monitor: Status der Datenquellen</title><link rel="stylesheet" href="../fonts/fonts.css"><link rel="stylesheet" href="monitor.css">
+<style>main{padding-top:30px}table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}td,th{padding:9px 10px;border-bottom:1px solid var(--ln);text-align:left;vertical-align:top}.ok{color:var(--up);font-weight:600}.stale,.down{font-weight:600;color:var(--dn);background:none;padding:0}.wrap{overflow-x:auto}li{margin:4px 0}</style></head>
+<body><main><h1 style="font:600 28px Figtree">Status der Datenquellen</h1><p id="g" class="sub"></p><div id="a"></div><div class="wrap"><table><thead><tr><th>Quelle</th><th>Zustand</th><th>Letzter Erfolg</th><th>Daten bis</th><th>Prüfung alle</th><th>Fehler</th></tr></thead><tbody id="t"></tbody></table></div><h2 style="margin-top:28px">Nachrichtenquellen</h2><ul id="f"></ul><h2>Fehlerprotokoll</h2><ul id="l"></ul><p class="ft">Diese Seite enthält nur öffentliche Statusangaben, keine Zugangsdaten. <a href="index.html">Zum Monitor</a></p></main>
+<script type="module">
+import { load } from "./core.js";
+const $ = i => document.getElementById(i), T = (p, s, c) => { const e = document.createElement(p); e.textContent = s; if (c) e.className = c; return e; };
+try {
+  const d = await load(), age = (Date.now() - new Date(d.generated)) / 36e5;
+  $("g").textContent = "Letzter Lauf: " + new Date(d.generated).toLocaleString("de-DE") + (age > 3 ? " – ACHTUNG: seit " + Math.round(age) + " Stunden kein neuer Lauf" : "");
+  (d.alerts || []).forEach(x => $("a").append(T("p", "⚠ " + x, "stale")));
+  const N = { ok: "OK", stale: "veraltet, letzter Stand aktiv", down: "ausgefallen", manual: "von Hand gepflegt" };
+  Object.values(d.status).sort((a, b) => a.state < b.state ? -1 : 1).forEach(s => { const r = document.createElement("tr"), a = T("a", s.name); a.href = s.url; a.target = "_blank"; a.rel = "noopener"; const c = document.createElement("td"); c.append(a); r.append(c, T("td", N[s.state], s.state), T("td", s.last ? new Date(s.last).toLocaleString("de-DE") : "–"), T("td", String(s.period || "–")), T("td", s.ttl ? (s.ttl < 120 ? s.ttl + " min" : Math.round(s.ttl / 60) + " h") : "–"), T("td", s.err || "")); $("t").append(r); });
+  Object.entries((d.blocks.news || {}).feeds || {}).forEach(([k, v]) => $("f").append(T("li", k + ": " + v)));
+  (d.log && d.log.length ? d.log : ["keine Fehler"]).forEach(x => $("l").append(T("li", x)));
+} catch (e) { $("g").textContent = "Keine Daten erreichbar."; }
+</script></body></html>
