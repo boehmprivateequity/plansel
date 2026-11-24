@@ -184,26 +184,43 @@ window.PLANSEL_I18N = (function () {
     translateDom();
     document.documentElement.lang = code === "zh" ? "zh-Hans" : code;
     document.dispatchEvent(new CustomEvent("plansel:lang", { detail: code }));
-    box.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === code)));
+    mark(code);
     const sel = document.getElementById("nl-lang"); if (sel) sel.value = code;
     try { localStorage.setItem("plansel-lang", code); } catch (e) {}
   }
   // Feste Sprachseiten (/pt/, /en/ …) sind schon fertig übersetzt; der Umschalter wechselt dort die Seite.
   const staticLang = document.documentElement.dataset.staticLang || "";
   const save = code => { try { localStorage.setItem("plansel-lang", code); } catch (e) {} };
+  // Handy: ein Knopf mit der aktuellen Sprache öffnet ein 2×4-Feld. Computer: Leiste wie bisher.
+  box.innerHTML = '<button type="button" class="lang-toggle" aria-expanded="false" aria-controls="lang-menu" aria-label="Sprache / Language">'
+    + '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c-5.5 5.5-5.5 12.5 0 18M12 3c5.5 5.5 5.5 12.5 0 18"/></svg>'
+    + '<span class="lang-now"></span><i class="lang-chev" aria-hidden="true"></i></button><div class="lang-menu" id="lang-menu"></div>';
+  const toggle = box.querySelector(".lang-toggle"), menu = box.querySelector(".lang-menu");
+  function mark(code) {
+    menu.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === code)));
+    const cur = LANGS.find(l => l[0] === code); if (!cur) return;
+    toggle.querySelector(".lang-now").textContent = cur[1];
+    toggle.setAttribute("aria-label", "Sprache / Language: " + cur[2]);
+  }
+  function open(on) { box.classList.toggle("open", on); toggle.setAttribute("aria-expanded", String(on)); }
+  toggle.addEventListener("click", () => open(!box.classList.contains("open")));
+  document.addEventListener("click", e => { if (!box.contains(e.target)) open(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && box.classList.contains("open")) { open(false); toggle.focus(); } });
   LANGS.forEach(([code, label, name]) => {
     const b = document.createElement("button");
-    b.type = "button"; b.dataset.lang = code; b.textContent = label; b.title = name; b.lang = code;
+    b.type = "button"; b.dataset.lang = code; b.title = name; b.lang = code;
+    b.innerHTML = '<span class="lc">' + label + '</span><span class="ln">' + name + '</span>';
     b.addEventListener("click", () => {
+      open(false);
       if (staticLang) { if (code !== staticLang) { save(code); location.href = "../" + code + "/" + (location.pathname.split("/").pop() || "") + location.hash; } return; }
       apply(code);
     });
-    box.appendChild(b);
+    menu.appendChild(b);
   });
 
   if (staticLang) {
     lang = staticLang;
-    box.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    mark(lang);
     const sel = document.getElementById("nl-lang"); if (sel) sel.value = lang;
   } else {
     // Quellseite: Portugiesisch ist Standard, sonst die zuletzt gewählte Sprache

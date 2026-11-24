@@ -57,10 +57,12 @@
   showAnswer(0, true);
 
   /* ---------- KI-Sommelier ---------- */
+  // Sprachseiten liegen in /de/, /en/ … und brauchen deshalb ../ vor dem Bildpfad
+  const IMG = (document.documentElement.dataset.staticLang ? "../" : "") + "img/";
   const WINES = {
-    tinto: { name: "Plansel Tinta Barroca", img: "img/garrafa-tinto.webp", type: "Tinto" },
-    branco: { name: "Plansel Branco", img: "img/garrafa-branco.webp", type: "Branco" },
-    rose: { name: "Plansel Rosé", img: "img/garrafa-rose.webp", type: "Rosé" }
+    tinto: { name: "Plansel Tinta Barroca", img: IMG + "garrafa-tinto.webp", type: "Tinto" },
+    branco: { name: "Plansel Branco", img: IMG + "garrafa-branco.webp", type: "Branco" },
+    rose: { name: "Plansel Rosé", img: IMG + "garrafa-rose.webp", type: "Rosé" }
   };
   function recommend(o, f, s) {
     if (f === "meat" || (s === "full" && f !== "fish")) return ["tinto", "Tinta Barroca bringt dunkle Frucht und weiche Tannine. Das trägt Fleisch und kräftige Saucen.", f === "meat" ? "Kräftig + Fleisch → Rotwein mit Struktur" : "Kräftig + Anlass → Rotwein mit Struktur"];
