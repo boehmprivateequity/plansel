@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["monitor/scripts/**", "monitor/data/oiv.json", ".github/workflows/wine-monitor.yml"]
+    paths: ["monitor/scripts/**", "monitor/data/oiv.json", "monitor/data/aktien.json", ".github/workflows/wine-monitor.yml"]
 permissions:
   contents: write
 concurrency:
@@ -21,14 +21,17 @@ jobs:
       - name: Letzten Stand holen
         run: |
           git fetch origin wine-data --depth=1 || true
-          for f in data.json history.json; do git show origin/wine-data:$f > /tmp/$f 2>/dev/null && cp /tmp/$f monitor/data/$f || true; done
+          for f in data.json history.json stocks.json; do git show origin/wine-data:$f > /tmp/$f 2>/dev/null && cp /tmp/$f monitor/data/$f || true; done
       - name: Daten aktualisieren
         run: perl monitor/scripts/update.pl monitor/data
+      - name: Aktien und Plansel Index aktualisieren
+        continue-on-error: true
+        run: perl monitor/scripts/stocks.pl monitor/data
       - name: Ergebnis prüfen
         run: perl -MJSON::PP -e 'local $/; open F,"<:raw","monitor/data/data.json" or die; my $d=decode_json(<F>); die "unvollständig" unless $d->{oiv} && $d->{blocks}{worldbank}'
       - name: Im Datenzweig speichern
         run: |
-          mkdir /tmp/out && cp monitor/data/data.json monitor/data/history.json /tmp/out/
+          mkdir /tmp/out && cp monitor/data/data.json monitor/data/history.json monitor/data/stocks.json /tmp/out/
           cd /tmp/out && git init -q -b wine-data && git add .
           git -c user.name=wine-monitor -c user.email=wine-monitor@users.noreply.github.com commit -q -m "Daten $(date -u +%FT%H:%MZ)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" wine-data

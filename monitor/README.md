@@ -1,6 +1,9 @@
 # PLANSEL Global Wine Monitor
 
-Eigenständige Seite: `monitor/index.html?lang=de` (de, en, pt, fr, es, it). Vorschau auf der Startseite: `preview.js`. Status: `monitor/admin.html`.
+Teil von `index4.html` (Weinwelt), Seite 02. Vorschau auf der Startseite: `preview.js`. Status: `monitor/admin.html`. `monitor/index.html` leitet nur noch weiter.
+
+- `welt.js`, `welt.css`: Vergleich, Aktien und Plansel Index auf `index4.html`. `monitor.js`: die Monitor-Ansicht.
+- `data/aktien.json`: Auswahl der Aktien von Hand, einmal im Quartal prüfen. `scripts/stocks.pl` rechnet daraus `stocks.json` (einmal am Tag). Anderer Kursanbieter: nur `hist()` und `mcap()` ändern.
 
 ## Aufbau
 - `scripts/update.pl`: Datenimport (Perl-Kernmodule und curl, keine Schlüssel). 3 Versuche je Abfrage, Plausibilitätsgrenzen, bei Ausfall bleibt der letzte gültige Stand.
@@ -11,9 +14,6 @@ Eigenständige Seite: `monitor/index.html?lang=de` (de, en, pt, fr, es, it). Vor
 
 ## Lokal
 `perl monitor/scripts/update.pl monitor/data` (mit `FORCE=1` ohne Zwischenspeicher).
-
-## Einbinden auf anderen Seiten
-`<iframe src="https://plansel.vercel.app/monitor/?lang=de" width="100%" height="900"></iframe>`
 
 ## Quellen und Rechte
 World Bank (CC BY 4.0), FAO über Our World in Data (CC BY), Eurostat/Comext, UN Comtrade (öffentliche Vorschau, begrenzt), EZB, IPMA, MET Norway (CC BY 4.0), NASA POWER, GISCO (© EuroGeographics). Nachrichten: nur Überschrift und Link.

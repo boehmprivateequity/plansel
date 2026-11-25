@@ -8,7 +8,7 @@ sub slurp { my $f = shift; open my $i, '<:raw', $f or return; local $/; <$i> }
 my $old = eval { $J->decode(slurp("$D/data.json") // '{}') } || {};
 my %out = (generated => $iso, blocks => {}, status => {}); my @log;
 sub get { my ($u) = @_; for my $try (1 .. 3) {
-  open my $p, '-|', 'curl', '-sL', '--compressed', '-m', '60', '-A', 'PlanselWineMonitor/1.0 (+https://plansel.vercel.app/monitor/)', '-w', "\n%{http_code}", $u or die 'curl';
+  open my $p, '-|', 'curl', '-sL', '--compressed', '-m', '60', '-A', 'PlanselWineMonitor/1.0 (+https://plansel.vercel.app/index4.html)', '-w', "\n%{http_code}", $u or die 'curl';
   binmode $p; local $/; my $b = <$p>; close $p; my ($c) = $b =~ /\n(\d+)\z/; $b =~ s/\n\d+\z//; return $b if ($c // 0) == 200; die "HTTP ".($c//0) if $try == 3; sleep 4 * $try } }
 sub js { $J->decode(get(shift)) }
 # Ein Block je Quelle: ttl in Minuten, Prüfung auf Plausibilität, Rückfall auf alten Stand
@@ -24,6 +24,9 @@ block('worldbank', 'World Bank Open Data', 'https://data.worldbank.org/', 1440, 
   my $p = wb('WLD', 'SP.POP.TOTL'); rng($p->[-1][1], 7.5e9, 1e10, 'Bevölkerung'); my $bi = wb('WLD', 'SP.DYN.CBRT.IN'); my $de = wb('WLD', 'SP.DYN.CDRT.IN');
   rng($bi->[-1][1], 8, 40, 'Geburtenrate'); rng($de->[-1][1], 4, 30, 'Sterberate');
   return { pop => $p, birth => $bi->[-1], death => $de->[-1], tourPT => wb('PRT', 'ST.INT.ARVL'), popPT => wb('PRT', 'SP.POP.TOTL')->[-1], period => $p->[-1][0] } });
+block('popc', 'World Bank: Bevölkerung je Land', 'https://data.worldbank.org/indicator/SP.POP.TOTL', 10080, sub {
+  my $d = js('https://api.worldbank.org/v2/country/PRT;FRA;ITA;DEU;GBR;ESP;RUS;ARG;AUS;USA/indicator/SP.POP.TOTL?format=json&mrnev=1&per_page=50'); my %h = map { $_->{country}{id} => [ $_->{date} + 0, $_->{value} + 0 ] } @{ $d->[1] };
+  rng(scalar keys %h, 9, 10, 'Länder'); rng($h{PT}[1], 9e6, 12e6, 'Portugal'); return { c => \%h, period => $h{PT}[0] } });
 block('fao', 'FAO (via Our World in Data)', 'https://ourworldindata.org/grapher/wine-production', 1440, sub {
   my $c = get('https://ourworldindata.org/grapher/wine-production.csv?csvType=full&useColumnShortNames=true'); my %s;
   for (split /\r?\n/, $c) { my @f = split /,/; next unless @f == 4 && $f[2] =~ /^\d{4}$/; push @{ $s{ $f[0] eq 'World' ? 'World' : $f[1] } }, [ $f[2] + 0, $f[3] + 0 ] }
