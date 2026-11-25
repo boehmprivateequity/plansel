@@ -2,11 +2,12 @@
 import { load, ctx, counters, HL } from "./core.js";
 import { plot } from "./chart.js";
 import { mount, deep } from "./monitor.js";
+import { land, loadLand } from "./land.js";
 const $ = i => document.getElementById(i), I18 = window.PLANSEL_I18N, tr = s => (I18 ? I18.tr(s) : s);
 const lang = () => document.documentElement.dataset.staticLang || (I18 ? I18.lang : "de");
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const WINE = "#9b2a4e", BLUE = "#3f6fb0", GOLD = "#b3873f";
-let D, S, CT, C, jobs = [], uid = 0;
+let D, S, A, CT, C, jobs = [], uid = 0;
 async function stocks() { for (const p of ["live/stocks.json", "data/stocks.json"]) { try { const r = await fetch(new URL(p, import.meta.url).href, { cache: "no-cache" }); if (r.ok) { const j = await r.json(); if (j && j.index) return j; } } catch (e) {} } return null; }
 const src = (n, u, p) => `<span class="src"><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>${p ? " · " + esc(p) : ""}</span>`;
 const card = (cls, h, sub, body, s) => `<section class="c ${cls}"><h2>${h}</h2><p class="sub">${sub}</p>${body}${s || ""}</section>`;
@@ -85,13 +86,13 @@ function pgwi() {
   $("ww-index").innerHTML = h + `</div><div class="ww-method"><p><b>${tr("So wird gerechnet")}.</b> ${tr("Monatskurse in Euro, gleich gewichtet. Eine Aktie kommt dazu, sobald es Kurse von ihr gibt.")} ${tr("Die Rückrechnung nutzt die heutige Auswahl. Unternehmen, die inzwischen von der Börse verschwunden sind, fehlen. Das macht die Vergangenheit etwas schöner, als sie war.")}</p><p>${tr("Viele Mitglieder leben nur zum Teil vom Wein, zum Beispiel Glas-, Verpackungs- und Maschinenhersteller.")} <b>${tr("Der Index dient der Information. Er ist keine Anlageberatung und kein Angebot.")}</b></p></div>`;
 }
 
-function all() { jobs = []; uid = 0; C = ctx(lang()); if (D) { live(); compare(); mount($("ww-mon"), D, lang()); } if ($("ww-stocks")) { shares(); pgwi(); } jobs.forEach(j => j()); }
+function all() { jobs = []; uid = 0; C = ctx(lang()); if (D) { live(); compare(); mount($("ww-mon"), D, lang()); } if ($("ww-stocks")) { shares(); pgwi(); } if ($("ww-land")) land($("ww-land"), A, { C, tr, card, src, chart, table, bars, D, WINE, BLUE, GOLD }); jobs.forEach(j => j()); }
 const tick = () => { if (document.hidden || !CT) return; const now = Date.now(); document.querySelectorAll("[data-c]").forEach(e => { const c = CT[e.dataset.c]; if (c) e.textContent = C.n(Math.floor(c.f(now))); }); };
 const jump = () => { const e = $(deep() ? "monitor" : location.hash.slice(1)); if (e) e.scrollIntoView({ behavior: "instant" }); };
 (async () => {
-  [D, S] = await Promise.all([load().catch(() => null), $("ww-stocks") ? stocks() : null]);
+  [D, S, A] = await Promise.all([load().catch(() => null), $("ww-stocks") ? stocks() : null, $("ww-land") ? loadLand() : null]);
   if (D) CT = counters(D); else { C = ctx(lang()); $("ww-cmp").textContent = tr("Die Daten sind gerade nicht erreichbar."); }
-  all(); tick(); setInterval(tick, 1000); if (location.hash) jump();
+  all(); tick(); setInterval(tick, 1000); if (location.hash) { jump(); let touched = false; ["wheel", "touchstart", "keydown"].forEach(t => addEventListener(t, () => { touched = true; }, { once: true, passive: true })); const again = () => { if (!touched) jump(); }; setTimeout(again, 350); document.fonts.ready.then(again); setTimeout(again, 1200); }
   document.addEventListener("plansel:lang", () => { all(); tick(); });
   let w = innerWidth, z; addEventListener("resize", () => { clearTimeout(z); z = setTimeout(() => { if (Math.abs(innerWidth - w) > 80) { w = innerWidth; all(); tick(); } }, 250); });
 })();

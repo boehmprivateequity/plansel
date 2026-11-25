@@ -231,3 +231,16 @@ window.PLANSEL_I18N = (function () {
   }
   return { apply, tr, get lang() { return lang; }, LANGS: LANGS.map(l => l[0]) };
 })();
+
+/* Handy-Menü: Knopf mit zwei Strichen, öffnet die Navigation unter der Kopfzeile */
+(function () {
+  const head = document.querySelector(".site-head"), nav = head && head.querySelector(".nav"), wrap = head && head.querySelector(".wrap"); if (!nav || !wrap) return;
+  nav.id = nav.id || "site-nav";
+  const b = document.createElement("button"); b.type = "button"; b.className = "nav-toggle"; b.setAttribute("aria-expanded", "false"); b.setAttribute("aria-controls", nav.id); b.setAttribute("aria-label", "Menu"); b.innerHTML = "<i></i><i></i>"; wrap.append(b);
+  const open = on => { head.classList.toggle("nav-open", on); b.setAttribute("aria-expanded", String(on)); };
+  b.addEventListener("click", () => open(!head.classList.contains("nav-open")));
+  nav.addEventListener("click", e => { if (e.target.closest("a")) open(false); });
+  document.addEventListener("click", e => { if (!head.contains(e.target)) open(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && head.classList.contains("nav-open")) { open(false); b.focus(); } });
+  const lt = head.querySelector(".lang-toggle"); if (lt) lt.addEventListener("click", () => open(false));
+})();

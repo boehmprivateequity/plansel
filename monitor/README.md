@@ -11,6 +11,7 @@ Teil von `index4.html` (Weinwelt), Seite 02. Vorschau auf der Startseite: `previ
 - `vercel.json`: liefert diese Dateien unter `/monitor/live/` aus, ohne neuen Build. `data/` ist der mitgelieferte Ersatzstand.
 - `history.json`: ein Eintrag je Tag, daraus wächst die eigene Datenbank.
 - `data/oiv.json`: OIV und UN Tourism, von Hand. Nach jeder neuen Veröffentlichung ergänzen.
+- `data/land.json`: Hektarpreise für Seite 04, von Hand. Knight Frank (Frühjahr), SAFER (Mai), MAPA (Oktober), CREA (November).
 
 ## Lokal
 `perl monitor/scripts/update.pl monitor/data` (mit `FORCE=1` ohne Zwischenspeicher).
