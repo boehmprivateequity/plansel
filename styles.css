@@ -600,12 +600,12 @@ form.signup legend.eyebrow::before { display: none; }
 .v-group { margin-top: 22px; font-size: .95rem; }
 .v-back { margin-top: 1.2em; }
 .v-backrow { padding-block: 4px 40px; text-align: right; }
-@media (max-width: 980px) { .nav .nav-home { display: none; } }
+
 .sci-cta { margin-top: clamp(28px, 4vw, 44px); }
 .fam-cta { margin-top: 14px; }
 /* Navigation: nie umbrechen; bei mittlerer Breite nur die wichtigsten Punkte */
 .nav a { white-space: nowrap; }
-@media (max-width: 1240px) { .nav { gap: 16px; } .nav a { font-size: .85rem; } .nav a:nth-child(n+5) { display: none; } }
+
 .head-cta, .lang button { white-space: nowrap; }
 
 /* Mundus Vini: Qualitätssiegel unter den Events */
@@ -989,8 +989,9 @@ img.zoomable:hover, img.zoomable:focus-visible { box-shadow: 0 0 0 3px var(--gol
 @media (prefers-reduced-motion: reduce) { .ww-ico .b, .ww-mark .b, .pm-home img { transition: none; } }
 .site-head .brand { flex: none; } .site-head .brand-text small { white-space: nowrap; } @media (max-width: 1500px) { .site-head .wrap:has(.ww-ico) .nav { gap: 15px; } .site-head .wrap:has(.ww-ico) { gap: 14px; } }
 /* Kopfzeile mit Icon: passt in allen acht Sprachen. Zurück zur Startseite führt das Logo. */
-.site-head .wrap:has(.ww-ico) .nav { gap: 14px; } .site-head .nav .nav-home { display: none; }
-@media (max-width: 1320px) { .site-head .wrap:has(.ww-ico) .nav a:nth-child(n+6) { display: none; } }
+.site-head .wrap:has(.ww-ico) .nav { gap: 14px; } @media (max-width: 1330px) { .site-head .wrap:has(.ww-ico) .nav { gap: 11px; } .site-head .nav a { font-size: .84rem; } .site-head .lang button { padding-inline: 8px; } .site-head .head-cta { padding-inline: .9em; } }
+.site-head .nav a[aria-current] { color: #6f1130; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: .4em; } .ww-ico[aria-current] { background: #6f1130; border-color: #6f1130; color: #fff; }
+.chap { border-bottom: 1px solid var(--line); background: var(--paper); } .chap .wrap { display: flex; gap: 24px; overflow-x: auto; scrollbar-width: none; } .chap a { flex: none; display: inline-flex; align-items: center; min-height: 44px; font-size: .86rem; color: var(--ink-2); text-decoration: none; white-space: nowrap; } .chap a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: .4em; }
 @media (min-width: 761px) and (max-width: 920px) { .site-head .wrap:has(.ww-ico) .head-cta { display: none; } }
 /* Handy-Menü */
 .nav-toggle, .nav .nav-m { display: none; }

@@ -12,6 +12,8 @@ Teil von `index4.html` (Weinwelt), Seite 02. Vorschau auf der Startseite: `previ
 - `history.json`: ein Eintrag je Tag, daraus wächst die eigene Datenbank.
 - `data/oiv.json`: OIV und UN Tourism, von Hand. Nach jeder neuen Veröffentlichung ergänzen.
 - `data/land.json`: Hektarpreise für Seite 04, von Hand. Knight Frank (Frühjahr), SAFER (Mai), MAPA (Oktober), CREA (November).
+- `data/assets-base.json`: Asset-Klassen, feste Werte von Hand (Savills, IIF, SIFMA, OPEC, USGS, World Gold Council, M2 China, Uran). `scripts/assets.pl` holt einmal am Tag Preise, Geldmengen und Bitcoin und schreibt `assets.json`.
+- `data/assets-reg.json`: Länderwerte der Asset-Klassen (USA, China, Indien, EU, Japan), von Hand.
 
 ## Lokal
 `perl monitor/scripts/update.pl monitor/data` (mit `FORCE=1` ohne Zwischenspeicher).

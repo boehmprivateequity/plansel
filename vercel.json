@@ -1,6 +1,6 @@
 {
   "git": { "deploymentEnabled": { "wine-data": false } },
   "rewrites": [
-    { "source": "/monitor/live/:file(data.json|history.json|stocks.json)", "destination": "https://raw.githubusercontent.com/boehmprivateequity/plansel/wine-data/:file" }
+    { "source": "/monitor/live/:file(data.json|history.json|stocks.json|assets.json)", "destination": "https://raw.githubusercontent.com/boehmprivateequity/plansel/wine-data/:file" }
   ]
 }

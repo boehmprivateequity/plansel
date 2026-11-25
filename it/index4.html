@@ -27,23 +27,24 @@
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Plansel – home" title="Home Plansel">
+    <a class="brand" href="index.html" aria-label="Plansel – home" title="Plansel – home">
       <img src="../img/plansel-wappen-kraeftig.svg" alt="Stemma di Plansel" width="23" height="54">
       <span class="brand-text"><b>PLANSEL</b><small>Quinta da Plansel · Portogallo</small></span>
     </a>
     <nav class="nav" aria-label="Navigazione" id="site-nav">
-      <a href="index.html" class="nav-home">← Plansel Group</a>
-      <a href="#menschen">Persone</a>
-      <a href="#statistik">Statistiche</a>
-      <a href="#aktien">Azioni</a>
-      <a href="#weinberge">Vigneti</a>
-      <a href="index2.html" class="nav-m">Viveiros</a>
-      <a href="index3.html" class="nav-m">Famiglia</a>
+      <a href="index.html#angebot">Cosa offriamo</a>
+      <a href="index.html#events">Eventi</a>
+      <a href="index.html#weine" data-i18n="nav.wines">Vini</a>
+      <a href="index2.html">Viveiros</a>
+      <a href="index3.html">Famiglia</a>
+      <a href="index.html#akademie" data-i18n="nav.academy">Accademia</a>
+      <a href="index.html#technology">Tecnologia</a>
+      <a href="index4.html" class="nav-m" aria-current="page">Mondo del vino</a>
       <a href="https://loja.plansel.com/" class="nav-m" target="_blank" rel="noopener">Shop</a>
     </nav>
-    <a class="ww-ico" href="index4.html#statistik" aria-label="Mondo del vino: statistiche e dati" title="Mondo del vino: statistiche e dati"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 3.5h15.6a1.7 1.7 0 0 1 1.7 1.7v10.1a1.7 1.7 0 0 1-1.7 1.7H4.2a1.7 1.7 0 0 1-1.7-1.7V5.2a1.7 1.7 0 0 1 1.7-1.7zM12 17v3.5M8 20.5h8"></path><path class="b" d="M6.8 13.5v-2.6M10.3 13.5V8.2M13.8 13.5V10M17.2 13.5V6.8"></path></svg></a>
+    <a class="ww-ico" href="index4.html#statistik" aria-current="page" aria-label="Mondo del vino: statistiche e dati" title="Mondo del vino: statistiche e dati"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 3.5h15.6a1.7 1.7 0 0 1 1.7 1.7v10.1a1.7 1.7 0 0 1-1.7 1.7H4.2a1.7 1.7 0 0 1-1.7-1.7V5.2a1.7 1.7 0 0 1 1.7-1.7zM12 17v3.5M8 20.5h8"></path><path class="b" d="M6.8 13.5v-2.6M10.3 13.5V8.2M13.8 13.5V10M17.2 13.5V6.8"></path></svg></a>
     <div class="lang" role="group" aria-label="Sprache / Language" id="lang"></div>
-    <a class="btn head-cta" href="https://loja.plansel.com/" target="_blank" rel="noopener">Shop</a>
+    <a class="btn head-cta" href="https://loja.plansel.com/" target="_blank" rel="noopener" data-i18n="cta.shop">Shop</a>
   </div>
 </header>
 
@@ -55,14 +56,15 @@
         <p class="eyebrow">Mondo del vino</p>
         <h1 id="ww-title">Il mondo del vino in cifre.</h1>
         <p class="ww-lede">Chi vive di vino, quanto il mondo produce e beve, e quali società sono quotate.</p>
-        <ol class="ww-toc">
-          <li><a href="#menschen"><i>01</i><b>Persone</b><small>Dalla vite al calice</small></a></li>
-          <li><a href="#statistik"><i>02</i><b>Statistiche</b><small>Produzione, consumo, commercio, clima</small></a></li>
-          <li><a href="#aktien"><i>03</i><b>Azioni</b><small>Settori e Indice Plansel</small></a></li>
-          <li><a href="#weinberge"><i>04</i><b>Vigneti</b><small>Quanto costa un ettaro</small></a></li>
-        </ol>
       </div>
       <div class="ww-live" id="ww-live" data-dyn="" data-empty=""></div>
+      <ol class="ww-toc">
+        <li><a href="#menschen"><i>01</i><b>Persone</b><small>Dalla vite al calice</small></a></li>
+        <li><a href="#statistik"><i>02</i><b>Statistiche</b><small>Produzione, consumo, commercio, clima</small></a></li>
+        <li><a href="#aktien"><i>03</i><b>Azioni</b><small>Settori e Indice Plansel</small></a></li>
+        <li><a href="#weinberge"><i>04</i><b>Vigneti</b><small>Quanto costa un ettaro</small></a></li>
+        <li><a href="#assets"><i>05</i><b>Classi di attività</b><small>Petrolio, cash, oro e azioni a confronto</small></a></li>
+      </ol>
     </div>
   </section>
 
@@ -132,6 +134,14 @@
     </div>
   </section>
 
+  <section class="sec" id="assets" aria-labelledby="as-title">
+    <div class="wrap"><p class="page-mark"><a class="pm-home" href="index.html" aria-label="Plansel – home" title="Plansel – home"><img src="../img/plansel-wappen-kraeftig.svg" alt="" width="10" height="23"></a><span class="pm-label">Classi di attività</span><span class="pm-n">05</span></p></div>
+    <div class="wrap">
+      <div class="sec-head"><h2 id="as-title">Quanto vale il mondo.</h2><p class="lede">Otto classi per dimensione, il mondo a confronto con USA, Cina, India, UE e Giappone.</p></div>
+      <div class="mon" id="ww-assets" data-dyn="" data-empty=""></div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-foot">
@@ -146,6 +156,7 @@
 
 <script src="../i18n-texts.js"></script>
 <script src="../i18n.js"></script>
+<script src="../nav.js"></script>
 <script type="module" src="../monitor/welt.js"></script>
 
 
