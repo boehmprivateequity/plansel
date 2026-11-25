@@ -428,6 +428,9 @@ form.signup legend.eyebrow::before { display: none; }
 .ev-t[href^="mailto:"]::after { content: " →"; }
 .ev-t:hover { text-decoration: underline; text-decoration-color: var(--gold); }
 .ev--own .ev-t { color: var(--gold-deep); }
+.ev-sub { display: block; margin-top: 1px; font-size: .74rem; line-height: 1.35; color: var(--ink-2); } .ev-sub b { font-weight: 600; color: var(--gold-deep); }
+.ev-list:not(.ev-list--all) .ev--more { display: none; }
+.ev-more { display: block; margin: 6px 0 12px; padding: 10px 0; border: 0; background: none; font: 500 .9rem/1.2 var(--f-text); color: var(--gold-deep); text-decoration: underline; text-underline-offset: .35em; cursor: pointer; } .ev-more[hidden] { display: none; }
 .now .now-head { padding-block: 8px 20px; }
 .now .now-head h1 { font-size: var(--step-2); }
 .now-foot { margin-top: 10px; }
